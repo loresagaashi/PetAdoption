@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    <link rel="stylesheet" href="PetAdoption.css">
+    <link rel="stylesheet" href="RegisterLoginForm.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="logo">
+                <img src="./Photos/logo3.png" alt="Pet">
+                <a href="./PetAdoption.html"><strong>Pet Adoption</strong></a>
+            </div>
+            <div class="left">
+                <a href="#">DOGS & PUPPIES</a>
+                <a href="#">CATS & KITTENS</a>
+                <a href="#">ANIMAL HOSPITAL</a>
+                <a href="#">ANIMAL SHELTERS</a>
+                <a href="RegisterLoginForm.html">SIGN UP</a>
+            </div>
+        </div>
+
+    </header>
+    <div class="container">
+        <div class="buttons">
+            <button id="signUp" class="border-bottom" onclick="signUp()">Sign Up</button>
+            <button id="signIn" class="sign-in" onclick="signIn()">Sign In</button>
+        </div>
+        <div class="form-box">
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="firstNameField">
+                        <input type="text" placeholder="First Name" id="firstName">
+                    </div>
+                    <p id="errorFName" style="color: red;"></p>
+
+                    <div class="input-field" id="lastNameField">
+                        <input type="text" placeholder="Last Name" id="lastName">
+                    </div>
+                    <p id="errorLName" style="color: red;"></p>
+
+                    <div class="input-field" id="emailField">
+                        <input type="email" placeholder="Email" id="email">
+                    </div>
+                    <p id="errorEmail" style="color: red;"></p>
+
+                    <div class="input-field" id="passwordField">
+                        <input type="password" placeholder="Password" id="password">
+                    </div>
+                    <p id="errorPassword" style="color: red;"></p>
+
+                    <div class="input-field" id="dateField">
+                        <input type="date" id="date">
+                    </div>
+                    <p id="errorDate" style="color: red;"></p>
+
+                    <p id="forgotPassword" class="forgot-password"></p>
+                </div>
+                <div class="btn-group">
+                    <button type="button" id="submit" onclick="submitForm()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-module">
+            <div class="footer-module2">
+                <div class="footer-module-message">
+                    <p>You want to get the latest information on Pet Adoption? <br><b>Please Sign up to
+                            continue</b></br></p>
+                </div>
+                <div class="footer-module-link">
+                    <a href="LogIn.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+        <ul class="footer-list">
+            <li class="footer-item">
+                <a href="#">About Us</a>
+            </li>
+            <li class="footer-item">
+                <a href="#">Contact Us</a>
+            </li>
+            <li class="footer-item">
+                <a href="#">Privacy Policy</a>
+            </li>
+            <li class="footer-item">
+                <a href="#">Terms of Service</a>
+            </li>
+        </ul>
+
+        </div>
+        <div class="sub-footer-inner">
+            <div class="sub-footer-social">
+                <ul class="hArray">
+                    <li>
+                        <!-- <a href="#" class="li-facebook"><img src="C:\Users\lores\Desktop\UBT\Semestri III\Web\Pet Adoption\Photos\fb-logo.png" alt=""></a> -->
+                        <a href="#" class="li-facebook"><img src="./Photos/fb-logo.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" class="li-instagram"><img src="./Photos/instagram.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" class="li-x"><img src="./Photos/xlogo.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sub-footer-body">
+                <p class="sub-footer-copyright">
+                    ©
+                    "2023"
+                    PetAdoption.com
+                </p>
+                <p class="sub-footer-trademark">
+                    All trademark are owned by PetAdoption, or used with permission
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    let signupBtn = document.getElementById("signupBtn");
+    let signinBtn = document.getElementById("signinBtn");
+    let nameField = document.getElementById("firstNameField");
+    let lastNameField = document.getElementById("lastNameField");
+    let dateField = document.getElementById("dateField");
+    let submit = document.getElementById("submit");
+    let errorFName = document.getElementById("errorFName");
+    let signInButton = document.getElementById('signIn');
+    let signUpButton = document.getElementById('signUp');
+    let forgotPassword = document.getElementById('forgotPassword');
+    let errorPassword = document.getElementById('errorPassword');
+    let errorDate = document.getElementById('errorDate');
+    let errorEmail = document.getElementById('errorEmail');
+
+    function signUp() {
+        signUpButton.classList.add('border-bottom');
+        signInButton.classList.remove('border-bottom');
+
+        clearErrorMessages();
+        forgotPassword.innerHTML = ''
+        nameField.style.maxHeight = "60px";
+        dateField.style.maxHeight = "60px";
+        lastNameField.style.maxHeight = "60px";
+        signupBtn.classList.remove("disable");
+        signinBtn.classList.add("disable");
+        paragraphs.style.display = "block";
+    }
+
+    function signIn() {
+        signInButton.classList.add('border-bottom');
+        signUpButton.classList.remove('border-bottom');
+
+        clearErrorMessages();
+        forgotPassword.innerHTML = 'Forgot your password? Click here!'
+        nameField.style.maxHeight = "0";
+        dateField.style.maxHeight = "0";
+        lastNameField.style.maxHeight = "0";
+        paragraphs.style.display = "none";
+    }
+
+    function submitForm() {
+        let firstName = document.getElementById("firstName").value.trim();
+        let lastName = document.getElementById("lastName").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let date = document.getElementById("date").value.trim();
+
+        if (signInButton.classList.contains('border-bottom')) {
+            if (email === "") {
+                errorEmail.innerHTML = "Email must not be empty!";
+            }
+            if (password === "") {
+                errorPassword.innerHTML = "Password must not be empty!";
+            }
+        }
+        else {
+            if (firstName === "") {
+                errorFName.innerHTML = "First name must not be empty!";
+            }
+            if (lastName === "") {
+                errorLName.innerHTML = "Last name must not be empty!";
+            }
+            if (email === "") {
+                errorEmail.innerHTML = "Email must not be empty!";
+            }
+            if (password === "") {
+                errorPassword.innerHTML = "Password must not be empty!";
+            }
+            if (date === "") {
+                errorDate.innerHTML = "Date must not be empty!";
+            }
+        }
+    }
+
+    function clearErrorMessages() {
+        errorFName.innerHTML = "";
+        errorLName.innerHTML = "";
+        errorEmail.innerHTML = "";
+        errorPassword.innerHTML = "";
+        errorDate.innerHTML = "";
+    }
+</script>
+
+</html>

@@ -1,3 +1,10 @@
+body {
+  margin: 0%;
+  flex-wrap: wrap;
+}
+* {
+    box-sizing: border-box;
+}
 header {
   flex-wrap: wrap;
   width: 100%;
@@ -56,11 +63,6 @@ header {
   margin-top: -64px;
   justify-content: center;
   align-items: center;
-}
-* {
-  box-sizing: border-box;
-  margin: 0%;
-  padding: 0;
 }
 
 div {
@@ -124,6 +126,10 @@ div {
   color: rgb(81, 174, 145);
 }
 
+.tool-item img:hover {
+  transform: scale(1.5);
+}
+
 .banner-tool {
   display: flex;
   justify-content: center;
@@ -156,7 +162,7 @@ div {
   color: fafbfc;
   font-size: 18px;
   margin-top: 10px;
-  margin-bottom: 50px;
+  /* margin-bottom: 20px; */
 }
 
 .home {
@@ -179,19 +185,15 @@ div {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.section-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 32px;
-}
+
 
 .section-con {
   width: 15%;
   padding-left: 16px;
   margin-bottom: 16px;
   cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.14);
 }
 
 .section-item {
@@ -201,22 +203,14 @@ div {
   display: block;
 }
 
+.section-con:hover {
+  transform: scale(1.1);
+}
+
 .section-item a {
   display: inline-block;
   cursor: pointer;
   color: black;
-}
-
-.img-dog {
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  display: block;
-}
-
-.img-dog img {
-  width: 42%;
-  height: 30%;
 }
 
 .section-list {
@@ -237,7 +231,7 @@ div {
 }
 
 .section-item {
-  border-radius: 8px;
+  border-radius: 10px;
   border: solid 1px #f0f0f0;
 }
 
@@ -256,7 +250,32 @@ div {
   flex-direction: column;
   align-items: center;
 }
-
+.img-pet {
+  position: relative;
+  overflow: hidden;
+}
+.img-pet:after {
+  display: inline-block;
+  height: 72px;
+  width: 120%;
+  content: '';
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -54px;
+  z-index: 6;
+  left: -10%;
+}
+.section-img {
+  position: relative;
+  width: 100%;
+  height: 148px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  z-index: 3;
+  overflow: hidden;
+  position: relative;
+}
 .home .info-name {
   min-height: auto;
 }
@@ -297,8 +316,7 @@ div {
   color: #666;
 }
 
-.img-dog {
-  margin-left: 10px;
+.img-pet {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -307,10 +325,10 @@ div {
   justify-content: center;
 }
 
-.img-dog img {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
+.img-pet img {
+  width: 70%;
+  height: 70%;
+  object-fit:contain;
 }
 
 .section-list {
@@ -327,10 +345,6 @@ div {
 .info-feature,
 .info-gender {
   padding: 5px;
-}
-.section-item-more {
-  height: 292px;
-  padding: 26px;
 }
 
 .section-item-more {
@@ -373,7 +387,7 @@ div {
   width: 15%;
   padding: 10px;
   border-radius: 8px;
-  border: solid 1px #f0f0f0;
+  border: solid 2px #f0f0f0;
   box-sizing: border-box;
   margin: 10px;
 }
@@ -390,13 +404,6 @@ div {
   max-width: 270px;
   max-height: 48px;
   height: 100%;
-}
-.footer-list {
-  flex-direction: row;
-  flex-wrap: nowrap;
-  max-width: none;
-  text-align: center;
-  margin-left: -40px;
 }
 .footer-item {
   width: auto;
@@ -455,7 +462,7 @@ div {
   justify-content: center;
   margin-top: -10px;
 }
-.footer-module-link > a {
+.footer-module-link  a {
   background-color: rgb(81, 174, 145);
   border-radius: 100px;
   color: #fff;
@@ -466,6 +473,9 @@ div {
   text-decoration: none;
   text-transform: uppercase;
   width: 240px;
+}
+.footer-module-link a:hover{
+  color: rgb(27, 44, 27);
 }
 .sub-footer-social {
   box-sizing: border-box;
