@@ -152,7 +152,6 @@ div {
   text-align: center;
   color: white;
 }
-
 .banner-text h1 {
   margin: 0;
   font-size: 32px;
@@ -173,30 +172,30 @@ div {
 }
 
 .section {
-  font-family: Mvboli;
+  /* font-family: Mvboli; */
   margin-top: 50px;
-  font-style: italic;
-  font-size: 20px;
-  color: rgb(81, 174, 145);
+  /* font-style: italic; */
+  /* font-size: 20px;
+  color: rgb(81, 174, 145); */
 }
 
 .title {
-  font-size: 30px;
   margin-top: 30px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Mvboli;
+  font-style: italic;
+  color: rgb(81, 174, 145);
+  /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
 }
 
-
-
-.section-con {
-  width: 15%;
-  padding-left: 16px;
-  margin-bottom: 16px;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.14);
+.section h1 {
+  font-size: 40px;
 }
+
+.section h2 {
+  font-size: 30px;
+}
+
 
 .section-item {
   border-radius: 8px;
@@ -215,16 +214,6 @@ div {
   color: black;
 }
 
-.section-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 32px;
-  margin-bottom: -16px;
-  margin-left: -16px;
-}
-
 .adoption-con,
 .section-con {
   width: 20%;
@@ -235,13 +224,6 @@ div {
 .section-item {
   border-radius: 10px;
   border: solid 1px #f0f0f0;
-}
-
-.section-con {
-  border-radius: 8px;
-  cursor: pointer;
-  box-sizing: border-box;
-  margin-left: 50px;
 }
 
 .section-info {
@@ -336,7 +318,7 @@ div {
 .section-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-top: 32px;
   margin-bottom: -16px;
@@ -375,23 +357,15 @@ div {
   margin-bottom: -20px;
 }
 
-.section-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 32px;
-  margin-bottom: -16px;
-  margin-left: -16px;
-}
-
 .section-con {
   width: 15%;
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer; 
   border: solid 2px #f0f0f0;
   box-sizing: border-box;
   margin: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.14);
 }
 .footer {
   padding: 20px;
