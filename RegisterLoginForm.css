@@ -93,6 +93,12 @@
   .input-group {
     height: fit-content;
   }
+  .error-message {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+}
   .btn-group button.disable {
     background: #eaeaea;
     color: #555;

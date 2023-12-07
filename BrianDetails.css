@@ -1,0 +1,343 @@
+body {
+    margin: 0%;
+    flex-wrap: wrap;
+  }
+  * {
+      box-sizing: border-box;
+  }
+  header {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .header-nav {
+    
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin-top: -10px;
+  }
+  .logo img {
+    flex-wrap: wrap;
+    width: 80px;
+    height: 100px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo a {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: -25px;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  .left a:hover {
+    color: rgb(81, 174, 145);
+}
+
+
+.main{
+    padding: 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.detail-title {
+    display: flex;
+}
+.detail-title img{
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    margin-left: 12px;
+}
+.detail-title h1{
+    font-size: 32px;
+    line-height: 44px;
+}
+*{
+    box-sizing: border-box;
+
+}
+.test{
+    display: flex;
+}
+.main-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.animal-info{
+    margin-top: 50px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: inherit;
+}
+.animal-img {
+    width: 300px;
+    margin-right: 40px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.animal-img img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+}
+.animal-table {
+    width: 434.4px;
+    height: 382px;
+    /* margin-top: 24px; */
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.animal-table tr td {
+    padding: 14px 16px;
+    border-radius: 2px;
+    line-height: 20px;
+}
+.animal-table tr td:first-child {
+    background-color: #f1f8f7;
+    border-radius: 2px;
+    width: 138px;
+    font-size: 16px;
+    font-weight: 550;
+    color: #0f716d;
+    border-right: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+.animal-table tr td:last-child {
+    background-color: #fafafa;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #666;
+    border-bottom: 4px solid #fff;
+    width: 2964px;
+}
+.animal-detail-item {
+    margin-top: 100px;
+}
+.animal-detail-item h3{
+    font-size: 22px;
+    font-weight: 500;
+}
+.about-list{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: -32px;
+    margin-top: 0px;
+}
+.about-item{
+    width: 49%;
+    margin-bottom: 32px;
+
+}
+
+.about-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.about-top img{
+    width: 40px;
+    height: 40px;
+}
+.about-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 16px;
+}
+.about-des {
+    display: inline-block;
+    font-size: 16px;
+    color: #666;
+    margin-left: 40px;
+    margin-top: 4px;
+    line-height: 20px;
+}
+body{
+    font-family: euclidcircularb,sans-serif,serif;
+}
+.animal-contact .animal-subtitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-me {
+    display: inline-block;
+    background-color: #90ca92; 
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-right: 360px;
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: solid 1px rgb(220, 231, 228);
+    font-size: 14px;
+    color: rgb(66, 88, 80);
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.about-me:hover {
+    background-color: rgb(110, 179, 157);
+}
+
+.contact-list{
+    margin-top: 32px;
+}
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+}
+.main-common {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+.main-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contact-item img{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+.contact-text:hover{
+    color: rgb(81, 174, 145);
+    cursor: pointer;
+}
+.contact-text {
+        flex: 1;
+        display: inline-block;
+        font-size: 16px;
+        color: #666;
+        margin-left: 16px;
+        line-height: 22px;
+}
+  .main-common .aside{
+    width: 100%;
+  }
+  .aside{
+    margin-top: 24px;
+  }
+  .aside h2{
+    margin-bottom: 50px;
+    text-align: left;
+    margin-left: -30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.aside-tool-list {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: -16px;
+    margin-bottom: -16px;
+    margin-top: 24px;
+}
+.aside-tool-con {
+    width: 50%;
+    padding-left: 16px;
+    margin-bottom: 16px;
+}
+.aside-tool-con:hover {
+    transform: scale(1.1);
+}
+
+.aside-tool-item {
+    height: 140px;
+    color: #0f716d;
+    background-color: #f1f8f7;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 200px;
+}
+.link-cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+a {
+    display: inline-block;
+    cursor: pointer;
+    color: #333;
+}
+.aside-tool-item img {
+    width: 40px;
+    height: 40px;
+}
+.test {
+    display: grid;
+    grid-template-columns: 85% 25%; 
+}
