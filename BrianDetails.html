@@ -35,9 +35,16 @@
                 <div class="test">
                     <div class="container" style="height: auto !important;">
                         <div class="animal-info">
-                            <div class="animal-img">
+
+                            <div class="slider">
+                                <img  alt="" id="slideshow">
+                             <button class="btn prev" onclick="prev()"><</button>
+                             <button class="btn next" onclick="next()">></button>
+                         </div>
+
+                            <!-- <div class="animal-img">
                                 <img src="./Photos/dogforadoption3.png" alt="">
-                            </div>
+                            </div> -->
                             <table cellpadding="0" cellspacing="0" class="animal-table">
                                 <tbody></tbody>
                                 <tr>
@@ -176,5 +183,34 @@
             </div>
         </div>
       </main>
+
+      <script>
+        let i=0;
+        let img =['img.jpg','img1.jpg','img2.jpg','img3.jpg'];
+
+        function next(){
+            document.getElementById('slideshow').src=img[i];
+            if(i<img.length-1){
+                i++;
+            }
+            else{
+                i=0;
+            }
+
+        }
+
+        function prev(){
+            document.getElementById('slideshow').src=img[i];
+            if(i==0){
+                i=img.length-1;
+            }
+            else{
+                i--;
+            }
+        }
+
+
+        document.addEventListener(onload,next());              
+    </script> 
 </body>
 </html>
