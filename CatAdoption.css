@@ -64,7 +64,7 @@ header {
   top: 27%;
   left: 26%;
   transform: translate(-50%, -50%);
-  /* text-align: right; */
+  margin-left: 600px;
   color: beige;
 }
 

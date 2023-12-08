@@ -26,6 +26,9 @@
     </header>
     <main>
             <div class="backgroundPhoto">
+                <img id="slideshow"alt="">
+                <button onclick="changeImg()"></button>
+        </div>
             </div>
             <div class="banner-text">
                 <h1>
@@ -108,8 +111,8 @@
                                 </div>
                                 <div class="info-name">Ollie</div>
                                 <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Puppy</p>
+                                    <p>Medium</p>
+                                    <p>Adult</p>
                                 </div>
                                 <div class="seciton-button">
                                     <button>
@@ -127,17 +130,17 @@
                             <a href=""></a> 
                             <a href="#">
                                 <div class="img-pet">
-                                    <img class="section-img" src="./Photos/dogforadoption2.png" alt="dogforadoption1">
+                                    <img class="section-img" src="./Photos/dogforadoption3.png" alt="dogforadoption1">
                                 </div>
                             </a>
                             <div class="section-info">
                                 <div class="info-gender">
                                     <img src="./Photos/male.png" alt="" width="20px" height="20px">
                                 </div>
-                                <div class="info-name">Ollie</div>
+                                <div class="info-name">Tod</div>
                                 <div class="info-feature">
                                     <p>Small</p>
-                                    <p>Puppy</p>
+                                    <p>Adult</p>
                                 </div>
                                 <div class="seciton-button">
                                     <button>
@@ -162,7 +165,7 @@
                             <a href=""></a>
                             <a href="#">
                                 <div class="img-pet">
-                                    <img class="section-img" src="./Photos/catforadoption1.png" alt="dogforadoption1">
+                                    <img class="section-img" src="./Photos/dogforadoption4.png" alt="dogforadoption1">
                                 </div>
                             </a>
                             <div class="section-info">
@@ -191,7 +194,7 @@
                             <a href=""></a> 
                             <a href="#">
                                 <div class="img-pet">
-                                    <img class="section-img" src="./Photos/catforadoption2.png" alt="dogforadoption1">
+                                    <img class="section-img" src="./Photos/dogforadoption7.jpg" alt="dogforadoption1">
                                 </div>
                             </a>
                             <div class="section-info">
@@ -219,7 +222,7 @@
                             <a href=""></a> 
                             <a href="#">
                                 <div class="img-pet">
-                                    <img class="section-img" src="./Photos/catforadoption3.png" alt="dogforadoption1">
+                                    <img class="section-img" src="./Photos/dogforadoption8.jpg" alt="dogforadoption1">
                                 </div>
                             </a>
                             <div class="section-info">
@@ -248,14 +251,14 @@
                             <a href=""></a> 
                             <a href="#">
                                 <div class="img-pet">
-                                    <img class="section-img" src="./Photos/dogforadoption2.png" alt="dogforadoption1">
+                                    <img class="section-img" src="./Photos/dogforadoption10.png" alt="dogforadoption1">
                                 </div>
                             </a>
                             <div class="section-info">
                                 <div class="info-gender">
                                     <img src="./Photos/male.png" alt="" width="20px" height="20px">
                                 </div>
-                                <div class="info-name">Ollie</div>
+                                <div class="info-name">Mollie</div>
                                 <div class="info-feature">
                                     <p>Small</p>
                                     <p>Puppy</p>
@@ -330,5 +333,23 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            let i = 0;
+            let imgArray = ['./Photos/d.jpg'];
+       
+            function changeImg(){
+                document.getElementById('slideshow').src = imgArray[i];
+       
+                if(i< imgArray.length -1){
+                    i++;
+                }
+                else{
+                    i=0;
+                }
+                setTimeout("changeImg()", 1000);
+            }
+            document.addEventListener(onload, changeImg());
+        </script>
 </body>
 </html>
