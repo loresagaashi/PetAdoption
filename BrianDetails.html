@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian</title>
     <link rel="stylesheet" href="./BrianDetails.css">
 </head>
+
 <body>
     <header>
         <div class="header-nav">
-          <div class="logo">
-            <img src="./Photos/logo3.png" alt="Pet" />
-            <a href="./PetAdoption.html"><strong>Pet Adoption</strong></a>
-          </div>
-          <div class="left">
-            <a href="./DogAdoption.html">DOGS & PUPPIES</a>
-            <a href="./CatAdoption.html">CATS & KITTENS</a>
-            <a href="#">ANIMAL HOSPITAL</a>
-            <a href="#">ANIMAL SHELTERS</a>
-            <a href="./RegisterLoginForm.html">SIGN UP</a>
-          </div>
+            <div class="logo">
+                <img src="./Photos/logo3.png" alt="Pet" />
+                <a href="./PetAdoption.html"><strong>Pet Adoption</strong></a>
+            </div>
+            <div class="left">
+                <a href="./DogAdoption.html">DOGS & PUPPIES</a>
+                <a href="./CatAdoption.html">CATS & KITTENS</a>
+                <a href="#">ANIMAL HOSPITAL</a>
+                <a href="#">ANIMAL SHELTERS</a>
+                <a href="./RegisterLoginForm.html">SIGN UP</a>
+            </div>
         </div>
-      </header>
-      <main>
-        
+    </header>
+    <main>
+
         <div class="main main-common" style="height: auto !important;">
             <div class="container">
                 <div class="detail-title">
@@ -35,12 +37,15 @@
                 <div class="test">
                     <div class="container" style="height: auto !important;">
                         <div class="animal-info">
-
                             <div class="slider">
-                                <img  alt="" id="slideshow">
-                             <button class="btn prev" onclick="prev()"><</button>
-                             <button class="btn next" onclick="next()">></button>
-                         </div>
+                                <img alt="" id="slideshow">
+                                <button class="btn prev" onclick="prev()">
+                                    <p>&laquo;</p>
+                                </button>
+                                <button class="btn next" onclick="next()">
+                                    <p>&raquo;</p>
+                                </button>
+                            </div>
 
                             <!-- <div class="animal-img">
                                 <img src="./Photos/dogforadoption3.png" alt="">
@@ -49,15 +54,15 @@
                                 <tbody></tbody>
                                 <tr>
                                     <td>Breed</td>
-                                    <td>Staffordshire Terrier</td>
+                                    <td>Golden Retriever</td>
                                 </tr>
                                 <tr>
                                     <td>Color</td>
-                                    <td>White & Brown</td>
+                                    <td>Gold</td>
                                 </tr>
                                 <tr>
                                     <td>Age</td>
-                                    <td>Adult</td>
+                                    <td>Puppy</td>
                                 </tr>
                                 <tr>
                                     <td>Gender</td>
@@ -69,9 +74,9 @@
                                 </tr>
                                 <tr>
                                     <td>Coat Length</td>
-                                    <td>short</td>
+                                    <td>Long</td>
                                 </tr>
-                                
+
                             </table>
                         </div>
                         <div class="animal-detail-item animal-about">
@@ -94,7 +99,7 @@
                                         <span class="about-text">Health</span>
                                     </div>
                                     <div class="about-des">
-                                        Spay/Neuter
+                                        Vaccinated
                                     </div>
                                 </div>
                                 <div class="about-item">
@@ -150,14 +155,14 @@
                             <div class="aside-tool-list">
                                 <div class="aside-tool-con">
                                     <div class="aside-tool-item">
-                                        <a class="link-cover" href=""></a>
+                                        <a class="link-cover" href="./DogAdoption.html"></a>
                                         <img class="icon-tool" src="./Photos/dog2.png" alt="">
                                         <p>Dog Adoption</p>
                                     </div>
                                 </div>
                                 <div class="aside-tool-con">
                                     <div class="aside-tool-item">
-                                        <a class="link-cover" href=""></a>
+                                        <a class="link-cover" href="./CatAdoption.html"></a>
                                         <img class="icon-tool" src="./Photos/cat.png" alt="">
                                         <p>Cat Adoption</p>
                                     </div>
@@ -182,12 +187,13 @@
                 </div>
             </div>
         </div>
-      </main>
-      <footer class="footer">
+    </main>
+    <footer class="footer">
         <div class="footer-module">
             <div class="footer-module2">
                 <div class="footer-module-message">
-                    <p>You want to get the latest information on Pet Adoption? <br><b>Please Sign up to continue</b></br></p>
+                    <p>You want to get the latest information on Pet Adoption? <br><b>Please Sign up to
+                            continue</b></br></p>
                 </div>
                 <div class="footer-module-link">
                     <a href="./RegisterLoginForm.html">Sign Up</a>
@@ -208,61 +214,64 @@
                 <a href="#">Terms of Service</a>
             </li>
         </ul>
-        
-    </div>
-    <div class="sub-footer-inner">
-        <div class="sub-footer-social">
-         <ul class="hArray">
-             <li>
-                 <a href="https://www.facebook.com/" class="li-facebook"><img src="./Photos/fb-logo.png" alt=""></a>
-             </li>
-             <li>
-                 <a href="https://www.instagram.com/" class="li-instagram"><img src="./Photos/instagram.png" alt=""></a>
-             </li>
-             <li>
-                 <a href="https://twitter.com/" class="li-x"><img src="./Photos/xlogo.png" alt=""></a>
-             </li>
-         </ul>
-        </div> 
-        <div class="sub-footer-body">
-         <p class="sub-footer-copyright">
-             ©
-             2023
-             PetAdoption.com
-         </p>
-         <p class="sub-footer-trademark">
-             All trademark are owned by PetAdoption, or used with permission
-         </p>
-        </div>
-     </div>
-</footer>
-      <script>
-        let i=0;
-        let img =['briandetails2.png','briandetails3.JPG','briandetails4.JPG','briandetails9.JPG'];
 
-        function next(){
-            document.getElementById('slideshow').src=img[i];
-            if(i<img.length-1){
+        </div>
+        <div class="sub-footer-inner">
+            <div class="sub-footer-social">
+                <ul class="hArray">
+                    <li>
+                        <a href="https://www.facebook.com/" class="li-facebook"><img src="./Photos/fb-logo.png"
+                                alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/" class="li-instagram"><img src="./Photos/instagram.png"
+                                alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/" class="li-x"><img src="./Photos/xlogo.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sub-footer-body">
+                <p class="sub-footer-copyright">
+                    ©
+                    2023
+                    PetAdoption.com
+                </p>
+                <p class="sub-footer-trademark">
+                    All trademark are owned by PetAdoption, or used with permission
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let i = 0;
+        let img = ['./Photos/briandetails2.png', './Photos/briandetails9.png', './Photos/briandetails7.JPG', './Photos/briandetails4.png'];
+
+        function next() {
+            document.getElementById('slideshow').src = img[i];
+            if (i < img.length - 1) {
                 i++;
             }
-            else{
-                i=0;
+            else {
+                i = 0;
             }
 
         }
 
-        function prev(){
-            document.getElementById('slideshow').src=img[i];
-            if(i==0){
-                i=img.length-1;
+        function prev() {
+            document.getElementById('slideshow').src = img[i];
+            if (i == 0) {
+                i = img.length - 1;
             }
-            else{
+            else {
                 i--;
             }
         }
 
 
-        document.addEventListener(onload,next());              
-    </script> 
+        document.addEventListener(onload, next());              
+    </script>
 </body>
+
 </html>

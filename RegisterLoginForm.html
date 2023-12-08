@@ -32,7 +32,7 @@
             <button id="signIn" class="sign-in" onclick="signIn()">Sign In</button>
         </div>
         <div class="form-box">
-            <form >
+            <form>
                 <div class="input-group">
                     <div class="input-field" id="firstNameField">
                         <input type="text" placeholder="First Name" id="firstName">
@@ -63,8 +63,8 @@
                     </div>
                     <div class="error-message" id="dateError"></div>
                     <p id="errorDate" style="color: red;" aria-placeholder="Enter your birthday"></p>
-                    
-                    <p id="forgotPassword" class="forgot-password"></p>
+                    <a href="" id="forgotPassword" class="forgot-password"></a>
+                    <!-- <p id="forgotPassword" class="forgot-password"></p> -->
                 </div>
                 <div class="btn-group">
                     <button type="button" id="submit" onclick="submitForm()">Submit</button>
@@ -168,53 +168,53 @@
         let passwordError = document.getElementById('passwordError');
         let date = document.getElementById("date").value.trim();
         let dateError = document.getElementById('dateError');
-        
-        firstNameError.innerText= '';
-        lastNameError.innerText= '';
-        emailError.innerText= '';
-        passwordError.innerText= '';
+
+        firstNameError.innerText = '';
+        lastNameError.innerText = '';
+        emailError.innerText = '';
+        passwordError.innerText = '';
         // dateError.innerText= '';
         if (signInButton.classList.contains('border-bottom')) {
             let emailRegex = /^[^\@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-            emailError.innerText='Please enter a valid email!';
-            return ;
-        }
+                emailError.innerText = 'Please enter a valid email!';
+                return;
+            }
 
-        // let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[a-zA-Z\d!@#$%^&*]{6,16}$/;
-        // if (!passwordRegex.test(password)) {
-            if(password.length<8)  {
-        passwordError.innerText='Please enter a valid password!';
-        return;
-}
+            // let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[a-zA-Z\d!@#$%^&*]{6,16}$/;
+            // if (!passwordRegex.test(password)) {
+            if (password.length < 8) {
+                passwordError.innerText = 'Please enter a valid password!';
+                return;
+            }
         }
         else {
-        // if (signInButton.classList.contains('border-bottom')) {
-        let firstNameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
-        if (!firstNameRegex.test(firstName)) {
-            firstNameError.innerText='Please enter a valid first name!';
-            return;
-        }
-       
+            // if (signInButton.classList.contains('border-bottom')) {
+            let firstNameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
+            if (!firstNameRegex.test(firstName)) {
+                firstNameError.innerText = 'Please enter a valid first name!';
+                return;
+            }
 
-        let lastNameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
-        if (!lastNameRegex.test(lastName)) {
-            lastNameError.innerText='Please enter a valid last name!';
-            return ;
-        }
 
-        let emailRegex = /^[^\@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            emailError.innerText='Please enter a valid email!';
-            return ;
-        }
+            let lastNameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
+            if (!lastNameRegex.test(lastName)) {
+                lastNameError.innerText = 'Please enter a valid last name!';
+                return;
+            }
 
-        // let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[a-zA-Z\d!@#$%^&*]{6,16}$/;
-        // if (!passwordRegex.test(password)) {
-            if(password.length<8)  {
-        passwordError.innerText='Please enter a valid password!';
-        return;
-}
+            let emailRegex = /^[^\@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.innerText = 'Please enter a valid email!';
+                return;
+            }
+
+            // let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[a-zA-Z\d!@#$%^&*]{6,16}$/;
+            // if (!passwordRegex.test(password)) {
+            if (password.length < 8) {
+                passwordError.innerText = 'Please enter a valid password!';
+                return;
+            }
         }
     }
     function clearErrorMessages() {
@@ -223,10 +223,10 @@
         // errorEmail.innerHTML = "";
         // errorPassword.innerHTML = "";
         // errorDate.innerHTML = "";
-        firstNameError.innerText="";
-        lastNameError.innerText="";
-        emailError.innerText="";
-        passwordError.innerText="";
+        firstNameError.innerText = "";
+        lastNameError.innerText = "";
+        emailError.innerText = "";
+        passwordError.innerText = "";
     }
 </script>
 
