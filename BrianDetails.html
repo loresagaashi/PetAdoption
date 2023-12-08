@@ -260,13 +260,13 @@
         }
 
         function prev() {
-            document.getElementById('slideshow').src = img[i];
             if (i == 0) {
                 i = img.length - 1;
             }
             else {
                 i--;
             }
+            document.getElementById('slideshow').src=img[i];
         }
 
 
