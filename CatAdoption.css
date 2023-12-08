@@ -62,9 +62,10 @@ header {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   position: absolute;
   top: 27%;
-  left: 26%;
-  transform: translate(-50%, -50%);
-  margin-left: 600px;
+  left: 10%; 
+  transform: translate(-10%, -50%);
+  margin-left: 850px;
+  text-align: end;
   color: beige;
 }
 
