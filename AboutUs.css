@@ -1,0 +1,222 @@
+body {
+  margin: 0%;
+  flex-wrap: wrap;
+   
+}
+* {
+  box-sizing: border-box;
+}
+header {
+  flex-wrap: wrap;
+  width: 100%;
+}
+.header-nav {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-top: -10px;
+}
+.logo img {
+  flex-wrap: wrap;
+  width: 80px;
+  height: 100px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo a {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-left: -25px;
+}
+  
+.left {
+  display: flex;
+  align-items: center;
+}
+  
+.left a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+  
+.left a:hover {
+  color: rgb(81, 174, 145);
+}
+
+
+main {
+  overflow: hidden;
+  padding-bottom: 48px;
+  padding: 0 80px;
+   
+}
+
+.main-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+div {
+    display: block;
+}
+.about_us h1 {
+    margin-bottom: 23px;
+}
+h1 {
+    font-size: 32px;
+    line-height: 44px;
+}
+.about_us p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.about_us h3 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+
+.footer {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: rgb(37, 85, 69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+  .footer-logo img {
+    max-width: 270px;
+    max-height: 48px;
+    height: 100%;
+  }
+  .footer-item {
+    width: auto;
+    margin-left: 40px;
+    margin-bottom: 0;
+  }
+  .footer-item a {
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    line-height: 18px;
+    text-decoration: none;
+    text-decoration-style: none;
+  }
+  .footer-list {
+    margin-top: 40px;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style-type: none;
+  }
+  .footer-item a:hover {
+    color: black;
+  }
+  .footer-module {
+    padding: 0 24px;
+    justify-content: end;
+    align-items: end;
+  }
+  .footer-content {
+    display: flex;
+    max-width: 1200px;
+  }
+  .footer-module2 {
+    margin-top: 40px;
+    max-width: none;
+    width: 100%;
+    background-color: #f4e9fd;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(77, 71, 81, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    max-width: 330px;
+    padding: 23px;
+  }
+  .footer-module-message {
+    color: #000000;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .footer-module-link {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+  }
+  .footer-module-link a {
+    background-color: rgb(81, 174, 145);
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    font-family: Nexa Heavy, arial, helvetica, sans-serif;
+    justify-content: center;
+    padding: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 240px;
+  }
+  .footer-module-link a:hover {
+    color: rgb(27, 44, 27);
+  }
+  .sub-footer-social {
+    box-sizing: border-box;
+    padding: 20px 20px 20px;
+  }
+  .hArray {
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  .hArray > * {
+    display: flex;
+    font-size: 14px;
+  }
+  .li-facebook img {
+    height: 30px;
+    width: 30px;
+  }
+  .li-instagram img {
+    height: 30px;
+    width: 30px;
+  }
+  .li-x img {
+    height: 30px;
+    width: 30px;
+  }
+  .sub-footer-body {
+    color: white;
+    font-size: 13px;
+    padding: 10px 15px 30px;
+    text-align: center;
+    margin-bottom: -40px;
+  }
+  .sub-footer-copyright {
+    margin-bottom: 8px;
+    margin: 0;
+  }
+  .link {
+    text-decoration: none;
+    color: black;
+  }
+  
