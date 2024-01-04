@@ -27,6 +27,16 @@
         <div class=" main-index">
             <div class="index-content">
                 <div class="content">
+                    <div class="slider">
+                        <img alt="" id="slideshow">
+                        <button class="btn prev" onclick="prev()">
+                            <p>&laquo;</p>
+                        </button>
+                        <button class="btn next" onclick="next()">
+                            <p>&raquo;</p>
+                        </button>
+                    </div>
+                    <br>
                     <div class="about_us">
                         <h1>About Us</h1>
                         <p>Pets TheCountyOffice is a resourceful website that is dedicated to offering accurate
@@ -72,7 +82,14 @@
                          <p>In no event will we be liable for any loss or damage, including without limitation,
                             indirect or consequential loss or damage, or any loss or damage whatsoever arising from the use or reliance on the information provided on Pets.thecountyoffice.</p>
                     </div>
-
+                    <br>
+                    <div class="map">
+                        <h2>Where can you find us?</h2>
+                        <br>
+                        <h3>Map to our location:</h3>
+                        <br>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46965.77799594501!2d21.12571752314643!3d42.632503667118534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549c5e3bc3081b%3A0x7879057d173f21d6!2sVozhde%20Karaxhorxhe!5e0!3m2!1sen!2s!4v1704402584490!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,5 +152,30 @@
                 </div>
             </div>
         </footer>
+        <script>
+            let i = 0;
+            let img = ['./Photos/bg1.jpg', './Photos/bg6.png', './Photos/bg5.png', './Photos/bg7.jpg'];
+    
+            function next() {
+                document.getElementById('slideshow').src = img[i];
+                if (i < img.length - 1) {
+                    i++;
+                }
+                else {
+                    i = 0;
+                }
+    
+            }
+            function prev() {
+                if (i == 0) {
+                    i = img.length - 1;
+                }
+                else {
+                    i--;
+                }
+                document.getElementById('slideshow').src=img[i];
+            }
+            document.addEventListener(onload, next());              
+        </script>
 </body>
 </html>
