@@ -509,8 +509,9 @@ a {
 
 @media only screen and (max-width: 500px) {
   body {
-    margin: 5px; 
+    margin: 0; 
     flex-wrap: nowrap; 
+    overflow-x: hidden;
   }
   header {
     width: 100%;
@@ -540,6 +541,12 @@ a {
     margin-top: 10px;
     margin-left: 0;
   }
+  .main-common{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .left {
     display: flex;
@@ -558,6 +565,7 @@ a {
       /* width: 100%;
       height: 450px; */
     object-fit: fill;
+    margin-right: 25px;
   }
   
   .animal-info table{
@@ -566,6 +574,11 @@ a {
   .detail-title{
     margin-left: 35px;
   }
+  .animal-table {
+    width: 100%;
+    height: auto;
+    margin-right: 10px;
+}
   .animal-info{
     display: flex;
     flex-direction: column;
@@ -592,6 +605,15 @@ a {
     margin-top: 40px;
     
   }
+  .detail-title h1{
+    text-align: center;
+    margin-left: -40px;
+  }
+  .aside-tool-list {
+    margin-left: 20px;
+    margin-bottom: -16px;
+    margin-top: 24px;
+}
   .container {
     position: relative;
   }
@@ -612,6 +634,7 @@ a {
    padding: 50px;
    margin-bottom: -10px;
    margin-top: -30px;  
+   margin-left: -10px;
   }
   .about-item{
     margin-left: -60px;
@@ -642,6 +665,7 @@ a {
     top: 67%;
     margin-left: -20px;
   }
+  
  .contact-list { 
   position: absolute;
   top: 70%;
@@ -650,7 +674,7 @@ a {
   font-size: 15px;
  }
  .about-text{
-  font-size: 20px;
+  font-size: 15px;
  }
  
  .footer {
@@ -664,7 +688,10 @@ a {
 
 .footer-list {
   margin: 20px; 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .footer-item {
   margin-top: 10px;
@@ -683,7 +710,204 @@ a {
   margin-bottom: 0; 
 }
 }
+@media (min-width: 540px ) and (max-width: 720px){
+  body {
+    margin: 0; 
+    flex-wrap: nowrap; 
+    overflow-x: hidden;
+  }
+  header {
+    width: 80%;
+    margin: auto;
+  }
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 10px;
+  }
 
+  .logo img {
+    width: 80px;
+    height: 100px;
+  }
+
+  .logo {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .logo a {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  .left {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .left a {
+    margin-top: 0;
+    margin-right: 10px;
+  }
+  .main-common{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+  #slideshow {
+      /* width: 100%;
+      height: 450px; */
+    object-fit: fill;
+    margin-right: 25px;
+  }
+  
+  .animal-info table{
+    margin-bottom: -260px;
+  }
+  .detail-title{
+    margin-left: 35px;
+  }
+  .animal-table {
+    width: 100%;
+    height: auto;
+    margin-right: 10px;
+}
+  .animal-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 300px;
+    
+  }
+
+  .animal-table tr td:last-child{
+    width: 100%;
+  }
+  .animal-info table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 40px;
+    
+  }
+  .detail-title h1{
+    text-align: center;
+    margin-left: -40px;
+  }
+  .aside-tool-list {
+    margin-bottom: -16px;
+    margin-top: 24px;
+}
+  .container {
+    position: relative;
+  }
+ 
+  .aside-tool h2{
+    margin-top: 730px;
+    white-space: nowrap;
+    /* margin-left: -190px; */
+    transform: translate(-160%, -30%);
+  }
+  .aside-tool-con{
+    margin-left: -150px;
+  }
+  
+  .about-list{
+   display: flex;
+   flex-direction: column;
+   padding: 50px;
+   margin-bottom: -10px;
+   margin-top: -30px;  
+   margin-left: -10px;
+  }
+  .about-item{
+    margin-left: -60px;
+    
+  }
+  .about-top {
+   margin-top: -20px;
+   
+  }
+  .about-top img{
+    margin-left: -20px;
+  }
+  .animal-subtitle   {
+    margin-top: 960px;
+    margin-bottom: -30px;
+    display: flex;
+    margin-left: -30px;
+  }
+  .about-me{
+    position: absolute;
+    top: 68%;
+    margin-left: 130px;
+    margin-top: -13px;
+   
+  }
+  .animal-contact h3{
+    position: absolute;
+    top: 67%;
+    margin-left: -20px;
+  }
+  
+ .contact-list { 
+  position: absolute;
+  top: 70%;
+ }
+ .about-des{
+  font-size: 15px;
+ }
+ .about-text{
+  font-size: 15px;
+ }
+ 
+ .footer {
+  padding: 10px; 
+  margin-top: -430px;
+}
+
+.footer-logo img {
+  max-width: 200px; 
+}
+
+.footer-list {
+  margin: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-item {
+  margin-top: 10px;
+}
+.footer-module-link a {
+  width: 180px; 
+  padding: 10px; 
+}
+
+.sub-footer-body {
+  padding: 10px; 
+  margin-bottom: 20px; 
+}
+
+.sub-footer-copyright {
+  margin-bottom: 0; 
+}
+}
 @media (min-width: 810px ) and (max-width: 1080px){
   body {
     margin: 10px; 

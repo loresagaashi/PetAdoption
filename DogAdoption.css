@@ -375,6 +375,9 @@ header {
   justify-content: center;
   margin-top: -10px;
 }
+.footer-module-link a:hover {
+  color: rgb(27, 44, 27);
+}
 .footer-module-link > a {
   background-color: rgb(81, 174, 145);
   border-radius: 100px;
