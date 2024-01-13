@@ -669,6 +669,7 @@ a {
  .contact-list { 
   position: absolute;
   top: 70%;
+  margin-left: -40px;
  }
  .about-des{
   font-size: 15px;
@@ -692,6 +693,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: -40px;
 }
 .footer-item {
   margin-top: 10px;
