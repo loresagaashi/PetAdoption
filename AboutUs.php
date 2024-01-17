@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['email']) &&  !isset($_COOKIE['auth_token'])) {
+    header("location:LoginForm.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

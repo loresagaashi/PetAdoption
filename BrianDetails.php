@@ -20,7 +20,7 @@
                 <a href="./CatAdoption.html">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
-                <a href="./RegisterLoginForm.html">SIGN UP</a>
+                <a href="logout.php">LOG OUT</a>
             </div>
         </div>
     </header>
@@ -196,7 +196,7 @@
                             continue</b></br></p>
                 </div>
                 <div class="footer-module-link">
-                    <a href="./RegisterLoginForm.html">Sign Up</a>
+                    <a href="./RegisterForm.html">Sign Up</a>
                 </div>
             </div>
         </div>

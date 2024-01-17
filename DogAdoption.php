@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['email']) &&  !isset($_COOKIE['auth_token'])) {
+    header("location:LoginForm.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +21,14 @@
         <div class="header-nav">
             <div class="logo">
                 <img src="./Photos/logo3.png" alt="Pet" />
-                <a href="./PetAdoption.html"><strong>Pet Adoption</strong></a>
+                <a href="./PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
-                <a href="./DogAdoption.html">DOGS & PUPPIES</a>
-                <a href="./CatAdoption.html">CATS & KITTENS</a>
+                <a href="./DogAdoption.php">DOGS & PUPPIES</a>
+                <a href="./CatAdoption.php">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
-                <a href="./RegisterLoginForm.html">SIGN UP</a>
+                <a href="logout.php">LOG OUT</a>
             </div>
         </div>
     </header>
@@ -88,9 +96,9 @@
                                 <div class="seciton-button">
                                     <button>
                                         <!-- <a href="#"> -->
-                                            Adopt Me
+                                        Adopt Me
                                         <!-- </a> -->
-                                       
+
                                     </button>
                                 </div>
                             </div>
@@ -114,7 +122,7 @@
                                 <div class="seciton-button">
                                     <button>
                                         <!-- <a href="./DogAdoption.html"> -->
-                                            Adopt Me
+                                        Adopt Me
                                         <!-- </a> -->
                                         <!-- Adopt Me -->
                                     </button>
@@ -140,9 +148,9 @@
                                 <div class="seciton-button">
                                     <button>
                                         <!-- <a href="./DogAdoption.html"> -->
-                                            Adopt Me
+                                        Adopt Me
                                         <!-- </a> -->
-                                        
+
                                     </button>
                                 </div>
                             </div>
@@ -173,7 +181,7 @@
                                 <div class="seciton-button">
                                     <button>
                                         <!-- <a href="./DogAdoption.html"> -->
-                                            Adopt Me
+                                        Adopt Me
                                         <!-- </a> -->
                                     </button>
                                 </div>
@@ -199,7 +207,7 @@
                                 <div class="seciton-button">
                                     <button>
                                         <!-- <a href="./DogAdoption.html"> -->
-                                            Adopt Me
+                                        Adopt Me
                                         <!-- </a> -->
                                     </button>
                                 </div>
@@ -224,7 +232,7 @@
                                 <div class="seciton-button">
                                     <button>
                                         <!-- <a href="./DogAdoption.html"> -->
-                                            Adopt Me
+                                        Adopt Me
                                         <!-- </a> -->
                                     </button>
                                 </div>
@@ -250,7 +258,7 @@
                                 <div class="seciton-button">
                                     <button>
                                         <!-- <a href="./DogAdoption.html"> -->
-                                            Adopt Me
+                                        Adopt Me
                                         <!-- </a> -->
                                     </button>
                                 </div>
@@ -268,7 +276,7 @@
                                 continue</b></br></p>
                     </div>
                     <div class="footer-module-link">
-                        <a href="./RegisterLoginForm.html">Sign Up</a>
+                        <a href="./RegisterForm.php">Sign Up</a>
                     </div>
                 </div>
             </div>
