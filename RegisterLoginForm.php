@@ -4,6 +4,8 @@ $hide = "";
 $loginError = "";
 
 
+
+
 if (isset($_POST['submitbtn'])) {
     // if (empty($_POST['email']) || empty($_POST['password'])) {
     //     $loginError = "Please fill the required fields!";

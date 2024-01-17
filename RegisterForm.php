@@ -1,37 +1,80 @@
 <?php
+
 session_start();
-$hide = "";
-$firstNameError = "";
-$lastNameError = "";
-$passwordError = "";
-$phonenumberError = "";
-$emailError = "";
-$emailExists = "";
-if (isset($_POST['submitbtn'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+  if(isset($_SESSION["user"])){
+    header("Location: dashboard.php");
+  }
+// $hostname = "hostname";
+// $dbuser = "root";
+// $dbpassword = "";
+// $dbname = "registerlogin";
+// $conn = mysqli_connect($hostname, $dbuser, $dbpassword, $dbname);
 
-    include_once 'users.php';
-    $emailExists = false;
+// if (!$conn) {
+//     echo "something went wrong";
+// }
 
-    foreach ($users as $user) {
-        if ($user['email'] == $email) {
-            $emailExists = true;
-            $emailError = "Email already exists! Please try another one";
-            break;
-        }
+?>  
+
+<?php
+// require_once "database.php";
+
+if (isset($_POST["submitbtn"])) {
+    $firstname = $_POST["firstname"];
+    $lastname = $_POST["lastname"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $date = $_POST["date"]; 
+    $phonenumber = $_POST["phonenumber"];  
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+    $errors = array(); // Initialize the errors array
+
+    // Check if any field is empty
+    if (empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($date) || empty($phonenumber)) {
+        array_push($errors, "All fields are required");
     }
 
-    if (!$emailExists) {
-        // Email doesn't exist, proceed with registration
-        $_SESSION['email'] = $email;
-        $_SESSION['password'] = $password;
-        $_SESSION['role'] = 'user';
-        header("location: LogInForm.php");
-        exit();
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        array_push($errors, "Email is not valid");
+    }
+
+    // Check password length
+    if (strlen($password) < 8) {
+        array_push($errors, "Password must be at least 8 characters long");
+    }
+
+    require_once"database.php";
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_squery($conn$sql);
+    $rowCount = mysqli_num_rows($result);
+
+    if ($rowCount > 0) {
+         array_push($errors, "Email already exists");
+        }
+
+    if(count($errors)>0){
+        foreach($errors as $errors){
+            echo "<div class='alert alert-danger'>$error</div>";
+        }
+
+    }else{
+        require_once"database.php";
+        $sql = "INSERT INTO users (name,lastname,email,password, phonenumber,date) VALUES (?,?,?,?,?,?)";
+        $stmt=mysqli_stmt_init($conn);
+        $prepareStmt=mysqli_stmt_prepare($stmt,$sql);
+        if($prepareStmt){
+            mysqli_stmt_bind_param($stmt,"sssss",$firstname,$lastname,$email,$password,$date,$phonenumber);
+            mysql_stmt_execute($stmt);
+            echo "<div class='alert alert-success'>Ypu are registered succesfully.</div>";
+        }else{
+            die("Something went wrong.");
+        }
+       
     }
 }
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,17 +109,17 @@ if (isset($_POST['submitbtn'])) {
             <!-- <button id="signIn" class="sign-in" onclick="signIn()">Sign In</button> -->
         <!-- </div> -->
         <div class="form-box">
-            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" onsubmit="return submitForm(event)">
+            <form action="RegisterForm.php" method="POST" onsubmit="return submitForm(event)">
             <h1>Sign Up</h1>
                 <div class="input-group">
                     <div class="input-field" id="firstNameField">
-                        <input type="text" placeholder="First Name" id="firstName">
+                        <input type="text" name="firstname" placeholder="First Name" id="firstName">
                     </div>
                     <div class="error-message" id="firstNameError"></div>
                     <p id="errorFName" style="color: red;"></p>
 
                     <div class="input-field" id="lastNameField">
-                        <input type="text" placeholder="Last Name" id="lastName">
+                        <input type="text" name="lastname" placeholder="Last Name" id="lastName">
                     </div>
                     <div class="error-message" id="lastNameError"></div>
                     <p id="errorLName" style="color: red;"></p>
@@ -100,7 +143,7 @@ if (isset($_POST['submitbtn'])) {
                     <p id="phonenumberError" style="color: red;"></p>
 
                     <div class="input-field" id="dateField">
-                        <input type="date" id="date">
+                        <input type="date" name="date" id="date">
                     </div>
                     <div class="error-message" id="dateError"></div>
                     <p id="errorDate" st yle="color: red;" aria-placeholder="Enter your birthday"></p>

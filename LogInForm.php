@@ -1,42 +1,69 @@
 <?php
 session_start();
-$hide = "";
-$loginError = "";
-$emailError="";
-$passwordError="";
+  if(isset($_SESSION["user"])){
+    header("Location: dashboard.php");
+  }
+// session_start();
+// $hide = "";
+// $loginError = "";
+// $emailError="";
+// $passwordError="";
 
 
-if (isset($_POST['submitbtn'])) {
-   
+if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    include_once 'users.php';
-    $emailExists = false;
-    $loginSuccess = false;
-
-    foreach ($users as $user) {
-        if ($user['email'] == $email) {
-            $emailExists = true;
-
-            if ($user['password'] == $password) {
-                $loginSuccess = true;
-                $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
-                $_SESSION['role'] = $user['role'];
-                $_SESSION['loginTime'] = date("H:i:s");
-                header("location:PetAdoption.php");
-                exit();
-            } else {
-                $passwordError = "Incorrect Password!";
-            }
+    require_once"database.php";
+    $sql=" SELECT * FROM users WHERE email='$email'";
+    $result=mysqli_query($conn,$sql);
+    $user=mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if($user){
+        if(password_verify($password,$user["password"])){
+            session_start();
+            $SESSION["user"]="yes";
+            header("Location: dashboard.php");
+            die();
+        }else{
+            echo echo"<div class=;alert alert-danger'>Password does not match!</div>"
         }
-    }
-
-    if (!$emailExists) {
-        $emailError = "Incorrect Email!";
+        }
+    }else{
+        echo"<div class=;alert alert-danger'>Email does not match!</div>"
     }
 }
+
+
+// if (isset($_POST['submitbtn'])) {
+   
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+
+//     include_once 'users.php';
+//     $emailExists = false;
+//     $loginSuccess = false;
+
+//     foreach ($users as $user) {
+//         if ($user['email'] == $email) {
+//             $emailExists = true;
+
+//             if ($user['password'] == $password) {
+//                 $loginSuccess = true;
+//                 $_SESSION['email'] = $email;
+//                 $_SESSION['password'] = $password;
+//                 $_SESSION['role'] = $user['role'];
+//                 $_SESSION['loginTime'] = date("H:i:s");
+//                 header("location:PetAdoption.php");
+//                 exit();
+//             } else {
+//                 $passwordError = "Incorrect Password!";
+//             }
+//         }
+//     }
+
+//     if (!$emailExists) {
+//         $emailError = "Incorrect Email!";
+//     }
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
