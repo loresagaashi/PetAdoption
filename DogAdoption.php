@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['email']) &&  !isset($_COOKIE['auth_token'])) {
-    header("location:LoginForm.php");
-    exit();
-}
+// if (!isset($_SESSION['email']) &&  !isset($_COOKIE['auth_token'])) {
+//     header("location:LoginForm.php");
+//     exit();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,8 @@ if (!isset($_SESSION['email']) &&  !isset($_COOKIE['auth_token'])) {
                 <a href="./CatAdoption.php">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
-                <a href="logout.php">LOG OUT</a>
+                <!-- <a href="logout.php">LOG OUT</a> -->
+                <a href="./logout.php"><img src="./Photos/logout2.png" width="25px" height="25px" alt=""></a>
             </div>
         </div>
     </header>

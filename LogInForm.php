@@ -10,60 +10,60 @@ session_start();
 // $passwordError="";
 
 
-if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    require_once"database.php";
-    $sql=" SELECT * FROM users WHERE email='$email'";
-    $result=mysqli_query($conn,$sql);
-    $user=mysqli_fetch_array($result, MYSQLI_ASSOC);
-    if($user){
-        if(password_verify($password,$user["password"])){
-            session_start();
-            $SESSION["user"]="yes";
-            header("Location: dashboard.php");
-            die();
-        }else{
-            echo echo"<div class=;alert alert-danger'>Password does not match!</div>"
-        }
-        }
-    }else{
-        echo"<div class=;alert alert-danger'>Email does not match!</div>"
-    }
-}
-
-
-// if (isset($_POST['submitbtn'])) {
-   
+// if (isset($_POST['login'])) {
 //     $email = $_POST['email'];
 //     $password = $_POST['password'];
-
-//     include_once 'users.php';
-//     $emailExists = false;
-//     $loginSuccess = false;
-
-//     foreach ($users as $user) {
-//         if ($user['email'] == $email) {
-//             $emailExists = true;
-
-//             if ($user['password'] == $password) {
-//                 $loginSuccess = true;
-//                 $_SESSION['email'] = $email;
-//                 $_SESSION['password'] = $password;
-//                 $_SESSION['role'] = $user['role'];
-//                 $_SESSION['loginTime'] = date("H:i:s");
-//                 header("location:PetAdoption.php");
-//                 exit();
-//             } else {
-//                 $passwordError = "Incorrect Password!";
-//             }
+//     require_once"database.php";
+//     $sql=" SELECT * FROM users WHERE email='$email'";
+//     $result=mysqli_query($conn,$sql);
+//     $user=mysqli_fetch_array($result, MYSQLI_ASSOC);
+//     if($user){
+//         if(password_verify($password,$user["password"])){
+//             session_start();
+//             $SESSION["user"]="yes";
+//             header("Location: dashboard.php");
+//             die();
+//         }else{
+//              echo"<div class=;alert alert-danger'>Password does not match!</div>"
 //         }
-//     }
-
-//     if (!$emailExists) {
-//         $emailError = "Incorrect Email!";
+//         }
+//     }else{
+//         echo"<div class=;alert alert-danger'>Email does not match!</div>"
 //     }
 // }
+
+
+if (isset($_POST['submitbtn'])) {
+   
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    include_once 'users.php';
+    $emailExists = false;
+    $loginSuccess = false;
+
+    foreach ($users as $user) {
+        if ($user['email'] == $email) {
+            $emailExists = true;
+
+            if ($user['password'] == $password) {
+                $loginSuccess = true;
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
+                $_SESSION['role'] = $user['role'];
+                $_SESSION['loginTime'] = date("H:i:s");
+                header("location:PetAdoption.php");
+                exit();
+            } else {
+                $passwordError = "Incorrect Password!";
+            }
+        }
+    }
+
+    if (!$emailExists) {
+        $emailError = "Incorrect Email!";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,9 +71,9 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGN UP</title>
+    <title>LOG IN</title>
     <link rel="stylesheet" href="PetAdoption.css">
-    <link rel="stylesheet" href="LoginForm.css">
+    <link rel="stylesheet" href="LogInForm.css">
 </head>
 
 <body>
@@ -96,7 +96,7 @@ if (isset($_POST['login'])) {
  
         <div class="form-box">
             <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" onsubmit="return submitForm(event)">
-            <h1>Sign In</h1>
+            <h1>Log In</h1>
                 <div class="input-group">
         
 
@@ -131,7 +131,7 @@ if (isset($_POST['login'])) {
                  
                 </div>
                 <div class="btn-group">
-                    <button type="submit" name="submitbtn" id="submit">Submit</button>
+                    <button type="submit" name="submitbtn" id="submit">Login</button>
                 </div>
                
             <div class="register">
@@ -155,7 +155,7 @@ if (isset($_POST['login'])) {
             </form>
         </div>
     </div>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="footer-module">
             <div class="footer-module2">
                 <div class="footer-module-message">
@@ -182,13 +182,13 @@ if (isset($_POST['login'])) {
             </li>
         </ul>
 
-        </div>
-        <div class="sub-footer-inner">
+        </div> -->
+        <!-- <div class="sub-footer-inner">
             <div class="sub-footer-social">
                 <ul class="hArray">
                     <li>
-                        <!-- <a href="#" class="li-facebook"><img src="C:\Users\lores\Desktop\UBT\Semestri III\Web\Pet Adoption\Photos\fb-logo.png" alt=""></a> -->
-                        <a href="#" class="li-facebook"><img src="./Photos/fb-logo.png" alt=""></a>
+                         <a href="#" class="li-facebook"><img src="C:\Users\lores\Desktop\UBT\Semestri III\Web\Pet Adoption\Photos\fb-logo.png" alt=""></a> -->
+                        <!-- <a href="#" class="li-facebook"><img src="./Photos/fb-logo.png" alt=""></a>
                     </li>
                     <li>
                         <a href="#" class="li-instagram"><img src="./Photos/instagram.png" alt=""></a>
@@ -209,7 +209,7 @@ if (isset($_POST['login'])) {
                 </p>
             </div>
         </div>
-    </footer>
+    </footer>  -->
 </body>
 <script>
     let signupBtn = document.getElementById("signupBtn");

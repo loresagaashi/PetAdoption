@@ -48,7 +48,7 @@ if (isset($_POST["submitbtn"])) {
 
     require_once"database.php";
     $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_squery($conn$sql);
+    // $result = mysqli_squery($conn$sql);
     $rowCount = mysqli_num_rows($result);
 
     if ($rowCount > 0) {
@@ -84,14 +84,14 @@ if (isset($_POST["submitbtn"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN UP</title>
     <link rel="stylesheet" href="PetAdoption.css">
-    <link rel="stylesheet" href="LoginForm.css">
+    <link rel="stylesheet" href="RegisterForm.css">
 </head>
 
 <body>
     <header>
         <div class="header-nav">
             <div class="logo">
-                <img src="./Photos/logo3.png" alt="Pet">
+                <img src="./Photos/logoo3.png" alt="Pet">
                 <a href="./PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
@@ -106,66 +106,69 @@ if (isset($_POST["submitbtn"])) {
     <div class="container">
         <!-- <div class="buttons">
             <button id="signUp" class="border-bottom" onclick="signUp()">Sign Up</button> -->
-            <!-- <button id="signIn" class="sign-in" onclick="signIn()">Sign In</button> -->
+        <!-- <button id="signIn" class="sign-in" onclick="signIn()">Sign In</button> -->
         <!-- </div> -->
         <div class="form-box">
             <form action="RegisterForm.php" method="POST" onsubmit="return submitForm(event)">
             <h1>Sign Up</h1>
                 <div class="input-group">
-                    <div class="input-field" id="firstNameField">
-                        <input type="text" name="firstname" placeholder="First Name" id="firstName">
+                    <!-- Left column -->
+                    <div class="input-group-left">
+                    <div class="input-field left">
+                    <input type="text" name="firstname" placeholder="First Name" id="firstName">
+                        <div class="error-message" id="firstNameError"></div>
+                        <p id="errorFName" style="color: red;"></p>
                     </div>
-                    <div class="error-message" id="firstNameError"></div>
-                    <p id="errorFName" style="color: red;"></p>
-
-                    <div class="input-field" id="lastNameField">
-                        <input type="text" name="lastname" placeholder="Last Name" id="lastName">
+                    <div class="input-field left">
+                    <input type="text" name="lastname" placeholder="Last Name" id="lastName">
+                        <div class="error-message" id="lastNameError"></div>
+                        <p id="errorLName" style="color: red;"></p>
                     </div>
-                    <div class="error-message" id="lastNameError"></div>
-                    <p id="errorLName" style="color: red;"></p>
-
-                    <div class="input-field" id="emailField">
+                    <div class="input-field left">
                         <input type="text" name="email" placeholder="Email" id="email">
+                        <div class="error-message" id="emailError"></div>
+                        <p id="errorEmail" style="color: red;"></p>
                     </div>
-                    <div class="error-message" id="emailError"></div>
-                    <p id="errorEmail" style="color: red;"></p>
-
-                    <div class="input-field" id="passwordField">
+                    </div>
+           
+                    <!-- Right column -->
+                <div class="input-group-right">
+                <div class="input-field right">
                         <input type="password" name="password" placeholder="Password" id="password">
+                        <div class="error-message" id="passwordError"></div>
+                        <p id="errorPassword" style="color: red;"></p>
                     </div>
-                    <div class="error-message" id="passwordError"></div>
-                    <p id="errorPassword" style="color: red;"></p>
-
-                    <div class="input-field" id="numberField">
+                    <div class="input-field right">
                         <input type="text" name="phonenumber" placeholder="Phone Number" id="phonenumber">
+                        <div class="error-message" id="numberError"></div>
+                        <p id="phonenumberError" style="color: red;"></p>
                     </div>
-                    <div class="error-message" id="numberError"></div>
-                    <p id="phonenumberError" style="color: red;"></p>
-
-                    <div class="input-field" id="dateField">
-                        <input type="date" name="date" id="date">
+                    <div class="input-field right">
+                    <input type="date" name="date" id="date">
+                        <div class="error-message" id="dateError"></div>
+                        <p id="errorDate" style="color: red;" aria-placeholder="Enter your birthday"></p>
                     </div>
-                    <div class="error-message" id="dateError"></div>
-                    <p id="errorDate" st yle="color: red;" aria-placeholder="Enter your birthday"></p>
+                </div>
+                   
                     <a href="" id="forgotPassword" class="forgot-password"></a>
-                    <?php
-                    if ($emailExists) {
-                        echo "<p style='color: red;'>$emailError</p>";
-                    }
-                    ?>
                     <!-- <p id="forgotPassword" class="forgot-password"></p> -->
+                    <!-- <?php
+                    if ($emailExists) {
+                        echo "<p style='color: red; font-weight: bold;'>$emailError</p>";
+                    }
+                    ?> -->
                 </div>
                 <div class="btn-group">
-                    <button type="submit" name="submitbtn" id="submit">Submit</button>
+                    <button type="submit" name="submitbtn" id="submit">Sign up</button>
                 </div>
                 <div class="register">
-                <p>Already have an account? <a href="LogInForm.php">SIGN IN</a></p>
-            </div> 
-               
+                    <p>Already have an account? <a href="LogInForm.php">SIGN IN</a></p>
+                </div>
+
             </form>
         </div>
     </div>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="footer-module">
             <div class="footer-module2">
                 <div class="footer-module-message">
@@ -197,8 +200,8 @@ if (isset($_POST["submitbtn"])) {
             <div class="sub-footer-social">
                 <ul class="hArray">
                     <li>
-                        <!-- <a href="#" class="li-facebook"><img src="C:\Users\lores\Desktop\UBT\Semestri III\Web\Pet Adoption\Photos\fb-logo.png" alt=""></a> -->
-                        <a href="#" class="li-facebook"><img src="./Photos/fb-logo.png" alt=""></a>
+                        <a href="#" class="li-facebook"><img src="C:\Users\lores\Desktop\UBT\Semestri III\Web\Pet Adoption\Photos\fb-logo.png" alt=""></a> -->
+                        <!-- <a href="#" class="li-facebook"><img src="./Photos/fb-logo.png" alt=""></a>
                     </li>
                     <li>
                         <a href="#" class="li-instagram"><img src="./Photos/instagram.png" alt=""></a>
@@ -219,7 +222,7 @@ if (isset($_POST["submitbtn"])) {
                 </p>
             </div>
         </div>
-    </footer>
+    </footer> - -->
 </body>
 <script>
     let signupBtn = document.getElementById("signupBtn");
@@ -227,7 +230,7 @@ if (isset($_POST["submitbtn"])) {
     let signInButton = document.getElementById('signIn');
     let signUpButton = document.getElementById('signUp');
     let submit = document.getElementById("submit");
-  
+
     function submitForm(event) {
         let firstName = document.getElementById("firstName").value.trim();
         let firstNameError = document.getElementById('firstNameError');
@@ -274,23 +277,23 @@ if (isset($_POST["submitbtn"])) {
             return;
         }
         // let phonenumberRegex = /^\+\d{3} \d{3}-\d{3}$/;
-        // if(!phonenumberRegex.test(phonenumber.value)){
-            if(phonenumber<8) {
-            phonenumberError.innerText='Please enter a valid phone number!';
+        // if (!phonenumberRegex.test(phonenumber.value)) {
+        if (phonenumber < 9) {
+            phonenumberError.innerText = 'Please enter a valid phone number!';
             event.preventDefault();
             return;
         }
-    }
-    function clearErrorMessages() {
-        // errorFName.innerHTML = "";
-        // errorLName.innerHTML = "";
-        // errorEmail.innerHTML = "";
-        // errorPassword.innerHTML = "";
-        // errorDate.innerHTML = "";
-        firstNameError.innerText = "";
-        lastNameError.innerText = "";
-        emailError.innerText = "";
-        passwordError.innerText = "";
+        function clearErrorMessages() {
+            // errorFName.innerHTML = "";
+            // errorLName.innerHTML = "";
+            // errorEmail.innerHTML = "";
+            // errorPassword.innerHTML = "";
+            // errorDate.innerHTML = "";
+            firstNameError.innerText = "";
+            lastNameError.innerText = "";
+            emailError.innerText = "";
+            passwordError.innerText = "";
+        }
     }
 </script>
 
