@@ -1,97 +1,19 @@
-<?php
-
-session_start();
-  if(isset($_SESSION["user"])){
-    header("Location: dashboard.php");
-  }
-// $hostname = "hostname";
-// $dbuser = "root";
-// $dbpassword = "";
-// $dbname = "registerlogin";
-// $conn = mysqli_connect($hostname, $dbuser, $dbpassword, $dbname);
-
-// if (!$conn) {
-//     echo "something went wrong";
-// }
-
-?>  
-
-<?php
-// require_once "database.php";
-
-if (isset($_POST["submitbtn"])) {
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $date = $_POST["date"]; 
-    $phonenumber = $_POST["phonenumber"];  
-
-    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-    $errors = array(); // Initialize the errors array
-
-    // Check if any field is empty
-    if (empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($date) || empty($phonenumber)) {
-        array_push($errors, "All fields are required");
-    }
-
-    // Validate email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        array_push($errors, "Email is not valid");
-    }
-
-    // Check password length
-    if (strlen($password) < 8) {
-        array_push($errors, "Password must be at least 8 characters long");
-    }
-
-    require_once"database.php";
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    // $result = mysqli_squery($conn$sql);
-    $rowCount = mysqli_num_rows($result);
-
-    if ($rowCount > 0) {
-         array_push($errors, "Email already exists");
-        }
-
-    if(count($errors)>0){
-        foreach($errors as $errors){
-            echo "<div class='alert alert-danger'>$error</div>";
-        }
-
-    }else{
-        require_once"database.php";
-        $sql = "INSERT INTO users (name,lastname,email,password, phonenumber,date) VALUES (?,?,?,?,?,?)";
-        $stmt=mysqli_stmt_init($conn);
-        $prepareStmt=mysqli_stmt_prepare($stmt,$sql);
-        if($prepareStmt){
-            mysqli_stmt_bind_param($stmt,"sssss",$firstname,$lastname,$email,$password,$date,$phonenumber);
-            mysql_stmt_execute($stmt);
-            echo "<div class='alert alert-success'>Ypu are registered succesfully.</div>";
-        }else{
-            die("Something went wrong.");
-        }
-       
-    }
-}
-?>
+<?php include_once '../controllers/RegisterController.php'?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN UP</title>
-    <link rel="stylesheet" href="PetAdoption.css">
-    <link rel="stylesheet" href="RegisterForm.css">
+    <link rel="stylesheet" href="../styles/PetAdoption.css">
+    <link rel="stylesheet" href="../RegisterForm.css">
 </head>
 
 <body>
     <header>
         <div class="header-nav">
             <div class="logo">
-                <img src="./Photos/logoo3.png" alt="Pet">
+                <img src="../Photos/logo3.png" alt="Pet">
                 <a href="./PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
@@ -109,18 +31,18 @@ if (isset($_POST["submitbtn"])) {
         <!-- <button id="signIn" class="sign-in" onclick="signIn()">Sign In</button> -->
         <!-- </div> -->
         <div class="form-box">
-            <form action="RegisterForm.php" method="POST" onsubmit="return submitForm(event)">
+            <form action="<?=$_SERVER['PHP_SELF']?>" method="POST" onsubmit="return submitForm(event)">
             <h1>Sign Up</h1>
                 <div class="input-group">
                     <!-- Left column -->
                     <div class="input-group-left">
                     <div class="input-field left">
-                    <input type="text" name="firstname" placeholder="First Name" id="firstName">
+                    <input type="text" name="firstName" placeholder="First Name" id="firstName">
                         <div class="error-message" id="firstNameError"></div>
                         <p id="errorFName" style="color: red;"></p>
                     </div>
                     <div class="input-field left">
-                    <input type="text" name="lastname" placeholder="Last Name" id="lastName">
+                    <input type="text" name="lastName" placeholder="Last Name" id="lastName">
                         <div class="error-message" id="lastNameError"></div>
                         <p id="errorLName" style="color: red;"></p>
                     </div>
@@ -139,12 +61,12 @@ if (isset($_POST["submitbtn"])) {
                         <p id="errorPassword" style="color: red;"></p>
                     </div>
                     <div class="input-field right">
-                        <input type="text" name="phonenumber" placeholder="Phone Number" id="phonenumber">
+                        <input type="text" name="phoneNumber" placeholder="Phone Number" id="phonenumber">
                         <div class="error-message" id="numberError"></div>
                         <p id="phonenumberError" style="color: red;"></p>
                     </div>
                     <div class="input-field right">
-                    <input type="date" name="date" id="date">
+                    <input type="date" name="birthDate" id="date">
                         <div class="error-message" id="dateError"></div>
                         <p id="errorDate" style="color: red;" aria-placeholder="Enter your birthday"></p>
                     </div>
@@ -159,7 +81,7 @@ if (isset($_POST["submitbtn"])) {
                     ?> -->
                 </div>
                 <div class="btn-group">
-                    <button type="submit" name="submitbtn" id="submit">Sign up</button>
+                    <button type="submit" name="submitBtn" id="submit">Sign up</button>
                 </div>
                 <div class="register">
                     <p>Already have an account? <a href="LogInForm.php">SIGN IN</a></p>
@@ -168,61 +90,6 @@ if (isset($_POST["submitbtn"])) {
             </form>
         </div>
     </div>
-    <!-- <footer class="footer">
-        <div class="footer-module">
-            <div class="footer-module2">
-                <div class="footer-module-message">
-                    <p>You want to get the latest information on Pet Adoption? <br><b>Please Sign up to
-                            continue</b></br></p>
-                </div>
-                <div class="footer-module-link">
-                    <a href="./RegisterForm.php">Sign Up</a>
-                </div>
-            </div>
-        </div>
-        <ul class="footer-list">
-            <li class="footer-item">
-                <a href="./AboutUs.html">About Us</a>
-            </li>
-            <li class="footer-item">
-                <a href="#">Contact Us</a>
-            </li>
-            <li class="footer-item">
-                <a href="#">Privacy Policy</a>
-            </li>
-            <li class="footer-item">
-                <a href="#">Terms of Service</a>
-            </li>
-        </ul>
-
-        </div>
-        <div class="sub-footer-inner">
-            <div class="sub-footer-social">
-                <ul class="hArray">
-                    <li>
-                        <a href="#" class="li-facebook"><img src="C:\Users\lores\Desktop\UBT\Semestri III\Web\Pet Adoption\Photos\fb-logo.png" alt=""></a> -->
-                        <!-- <a href="#" class="li-facebook"><img src="./Photos/fb-logo.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#" class="li-instagram"><img src="./Photos/instagram.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#" class="li-x"><img src="./Photos/xlogo.png" alt=""></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sub-footer-body">
-                <p class="sub-footer-copyright">
-                    ©
-                    "2023"
-                    PetAdoption.com
-                </p>
-                <p class="sub-footer-trademark">
-                    All trademark are owned by PetAdoption, or used with permission
-                </p>
-            </div>
-        </div>
-    </footer> - -->
 </body>
 <script>
     let signupBtn = document.getElementById("signupBtn");
@@ -276,19 +143,12 @@ if (isset($_POST["submitbtn"])) {
             event.preventDefault();
             return;
         }
-        // let phonenumberRegex = /^\+\d{3} \d{3}-\d{3}$/;
-        // if (!phonenumberRegex.test(phonenumber.value)) {
         if (phonenumber < 9) {
             phonenumberError.innerText = 'Please enter a valid phone number!';
             event.preventDefault();
             return;
         }
         function clearErrorMessages() {
-            // errorFName.innerHTML = "";
-            // errorLName.innerHTML = "";
-            // errorEmail.innerHTML = "";
-            // errorPassword.innerHTML = "";
-            // errorDate.innerHTML = "";
             firstNameError.innerText = "";
             lastNameError.innerText = "";
             emailError.innerText = "";
@@ -296,5 +156,4 @@ if (isset($_POST["submitbtn"])) {
         }
     }
 </script>
-
 </html>

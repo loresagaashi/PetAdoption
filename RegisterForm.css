@@ -6,24 +6,24 @@
     background-image: url('bglog.jpg');
   }
   body{
-    background: url('./Photos/bglogin5.png') no-repeat;
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
+  }
+  header {
+    height: 14%;
   }
   .header-nav{
-    background: transparent;
+    background-color: white;
   }
   .container {
-    margin-top: -10px;
     width: 100%;
-    height: 100%;
-    background-position: center;
+    height: 87.5%;
+    background: url('../Photos/bglogin5.png') no-repeat;
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
   }
   
   .forgot-password {
@@ -243,4 +243,201 @@
       box-shadow: 0 0 10px #4da58a;
     width: 800px;
   }
-  
+  @media only screen and (max-width: 700px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .form-box {
+        width: 100%;
+        display: flex;
+    }
+
+    .input-group {
+        flex-direction: column; 
+    }
+
+    .input-group-left,
+    .input-group-right {
+        width: 100%;
+    }
+
+    .input-field {
+        width: 100%;
+        margin-bottom: 10px; 
+    }
+
+    .btn-group {
+        text-align: center; 
+    }
+
+    #submit {
+        width: 100%; 
+    }
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-box {
+      width: 100%;
+      display: flex;
+  }
+
+  .input-group {
+      flex-direction: column; 
+  }
+
+  .input-group-left,
+  .input-group-right {
+      width: 100%;
+  }
+
+  .input-field {
+      width: 100%;
+      margin-bottom: 10px; 
+  }
+
+  .btn-group {
+      text-align: center; 
+  }
+
+  #submit {
+      width: 100%; 
+  }
+}
+@media (min-width: 320px ) and (max-width: 620px){
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-box {
+      width: 100%;
+      display: flex;
+  }
+
+  .input-group {
+      flex-direction: column; 
+  }
+
+  .input-group-left,
+  .input-group-right {
+      width: 100%;
+  }
+
+  .input-field {
+      width: 100%;
+      margin-bottom: 10px; 
+  }
+
+  .btn-group {
+      text-align: center; 
+  }
+
+  #submit {
+      width: 100%; 
+  }
+}
+@media (min-width: 481px ) and (max-width: 1024px){
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-box {
+      width: 100%;
+      display: flex;
+  }
+
+  .input-group {
+      flex-direction: column; 
+  }
+
+  .input-group-left,
+  .input-group-right {
+      width: 100%;
+  }
+
+  .input-field {
+      width: 100%;
+      margin-bottom: 10px; 
+  }
+
+  .btn-group {
+      text-align: center; 
+  }
+
+  #submit {
+      width: 100%; 
+  }
+}
+@media (min-width: 768px ) and (max-width: 1024px){
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-box {
+      width: 100%;
+      display: flex;
+  }
+
+  .input-group {
+      flex-direction: column; 
+  }
+
+  .input-group-left,
+  .input-group-right {
+      width: 100%;
+  }
+
+  .input-field {
+      width: 100%;
+      margin-bottom: 10px; 
+  }
+
+  .btn-group {
+      text-align: center; 
+  }
+
+  #submit {
+      width: 100%; 
+  }
+}
+@media (min-width: 375px ) and (max-width: 667px){
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-box {
+      width: 100%;
+      display: flex;
+  }
+
+  .input-group {
+      flex-direction: column; 
+  }
+
+  .input-group-left,
+  .input-group-right {
+      width: 100%;
+  }
+
+  .input-field {
+      width: 100%;
+      margin-bottom: 10px; 
+  }
+
+  .btn-group {
+      text-align: center; 
+  }
+
+  #submit {
+      width: 100%; 
+  }
+}

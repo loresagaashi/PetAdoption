@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian</title>
-    <link rel="stylesheet" href="./BrianDetails.css">
+    <link rel="stylesheet" href="../styles/BrianDetails.css">
 </head>
 
 <body>
     <header>
         <div class="header-nav">
             <div class="logo">
-                <img src="./Photos/logo3.png" alt="Pet" />
-                <a href="./PetAdoption.html"><strong>Pet Adoption</strong></a>
+                <img src="../Photos/logo3.png" alt="Pet" />
+                <a href="./PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
-                <a href="./DogAdoption.html">DOGS & PUPPIES</a>
-                <a href="./CatAdoption.html">CATS & KITTENS</a>
+                <a href="./DogAdoption.php">DOGS & PUPPIES</a>
+                <a href="./CatAdoption.php">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
                 <a href="logout.php">LOG OUT</a>
@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="detail-title">
                     <h1>Brian</h1>
-                    <img src="./Photos/male.png" alt="" width="50px" height="50px">
+                    <img src="../Photos/male.png" alt="" width="50px" height="50px">
                 </div>
             </div>
             <div class="main-bottom">
@@ -86,7 +86,7 @@
                             <div class="about-list">
                                 <div class="about-item">
                                     <div class="about-top">
-                                        <img src="./Photos/dog2.png" alt="">
+                                        <img src="../Photos/dog2.png" alt="">
                                         <span class="about-text">Characteristics</span>
                                     </div>
                                     <div class="about-des">
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="about-item">
                                     <div class="about-top">
-                                        <img src="./Photos/animal.png" alt="">
+                                        <img src="../Photos/animal.png" alt="">
                                         <span class="about-text">Health</span>
                                     </div>
                                     <div class="about-des">
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="about-item">
                                     <div class="about-top">
-                                        <img src="./Photos/trained.png" alt="">
+                                        <img src="../Photos/trained.png" alt="">
                                         <span class="about-text">House-trained</span>
                                     </div>
                                     <div class="about-des">
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="about-item">
                                     <div class="about-top">
-                                        <img src="./Photos/shelter.png" alt="">
+                                        <img src="../Photos/shelter.png" alt="">
                                         <span class="about-text">Good in a home with</span>
                                     </div>
                                     <div class="about-des">
@@ -131,19 +131,19 @@
                             </div>
                             <div class="contact-list">
                                 <div class="contact-item">
-                                    <img src="./Photos/shelter.png" alt="">
+                                    <img src="../Photos/shelter.png" alt="">
                                     <p class="contact-text">Pet Adoption</p>
                                 </div>
                                 <div class="contact-item">
-                                    <img src="./Photos/location.png" alt="">
+                                    <img src="../Photos/location.png" alt="">
                                     <p class="contact-text">1000 Prishtine, Kosove</p>
                                 </div>
                                 <div class="contact-item">
-                                    <img src="./Photos/phone.png" alt="">
+                                    <img src="../Photos/phone.png" alt="">
                                     <p class="contact-text">(+383) 45-444-777</p>
                                 </div>
                                 <div class="contact-item">
-                                    <img src="./Photos/email.png" alt="">
+                                    <img src="../Photos/email.png" alt="">
                                     <p class="contact-text">petadoption@gmail.com</p>
                                 </div>
                             </div>
@@ -155,29 +155,29 @@
                             <div class="aside-tool-list">
                                 <div class="aside-tool-con">
                                     <div class="aside-tool-item">
-                                        <a class="link-cover" href="./DogAdoption.html"></a>
-                                        <img class="icon-tool" src="./Photos/dog2.png" alt="">
+                                        <a class="link-cover" href="./DogAdoption.php"></a>
+                                        <img class="icon-tool" src="../Photos/dog2.png" alt="">
                                         <p>Dog Adoption</p>
                                     </div>
                                 </div>
                                 <div class="aside-tool-con">
                                     <div class="aside-tool-item">
-                                        <a class="link-cover" href="./CatAdoption.html"></a>
-                                        <img class="icon-tool" src="./Photos/cat.png" alt="">
+                                        <a class="link-cover" href="./CatAdoption.php"></a>
+                                        <img class="icon-tool" src="../Photos/cat.png" alt="">
                                         <p>Cat Adoption</p>
                                     </div>
                                 </div>
                                 <div class="aside-tool-con">
                                     <div class="aside-tool-item">
                                         <a class="link-cover" href=""></a>
-                                        <img class="icon-tool" src="./Photos/shelter.png" alt="">
+                                        <img class="icon-tool" src="../Photos/shelter.png" alt="">
                                         <p>Animal Hospital</p>
                                     </div>
                                 </div>
                                 <div class="aside-tool-con">
                                     <div class="aside-tool-item">
                                         <a class="link-cover" href=""></a>
-                                        <img class="icon-tool" src="./Photos/animal.png" alt="">
+                                        <img class="icon-tool" src="../Photos/animal.png" alt="">
                                         <p>Animal Shelter</p>
                                     </div>
                                 </div>
@@ -196,13 +196,13 @@
                             continue</b></br></p>
                 </div>
                 <div class="footer-module-link">
-                    <a href="./RegisterForm.html">Sign Up</a>
+                    <a href="./RegisterForm.php">Sign Up</a>
                 </div>
             </div>
         </div>
         <ul class="footer-list">
             <li class="footer-item">
-                <a href="./AboutUs.html">About Us</a>
+                <a href="./AboutUs.php">About Us</a>
             </li>
             <li class="footer-item">
                 <a href="#">Contact Us</a>
@@ -220,15 +220,15 @@
             <div class="sub-footer-social">
                 <ul class="hArray">
                     <li>
-                        <a href="https://www.facebook.com/" class="li-facebook"><img src="./Photos/fb-logo.png"
+                        <a href="https://www.facebook.com/" class="li-facebook"><img src="../Photos/fb-logo.png"
                                 alt=""></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/" class="li-instagram"><img src="./Photos/instagram.png"
+                        <a href="https://www.instagram.com/" class="li-instagram"><img src="../Photos/instagram.png"
                                 alt=""></a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/" class="li-x"><img src="./Photos/xlogo.png" alt=""></a>
+                        <a href="https://twitter.com/" class="li-x"><img src="../Photos/xlogo.png" alt=""></a>
                     </li>
                 </ul>
             </div>
@@ -246,7 +246,7 @@
     </footer>
     <script>
         let i = 0;
-        let img = ['./Photos/briandetails2.png', './Photos/briandetails9.png', './Photos/briandetails7.JPG', './Photos/briandetails4.png'];
+        let img = ['../Photos/briandetails2.png', '../Photos/briandetails9.png', '../Photos/briandetails7.JPG', '../Photos/briandetails4.png'];
 
         function next() {
             document.getElementById('slideshow').src = img[i];

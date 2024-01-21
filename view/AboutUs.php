@@ -12,23 +12,23 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Adoption</title>
-    <link rel="stylesheet" href="AboutUs.css">
-    <link rel="stylesheet" href="RegisterLoginForm.css" >
+    <link rel="stylesheet" href="../styles/AboutUs.css">
+    <link rel="stylesheet" href="../styles/RegisterLoginForm.css" >
 </head>
 <body>
     <header>
         <div class="header-nav">
             <div class="logo">
-                <img src="./Photos/logo3.png" alt="Pet">
-                <a href="./PetAdoption.html"><strong>Pet Adoption</strong></a>
+                <img src="../Photos/logo3.png" alt="Pet">
+                <a href="../view/PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
-                <a href="./DogAdoption.html">DOGS & PUPPIES</a>
-                <a href="./CatAdoption.html">CATS & KITTENS</a>
+                <a href="../view/DogAdoption.php">DOGS & PUPPIES</a>
+                <a href="../view/CatAdoption.php">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
                 <!-- <a href="./RegisterLoginForm.html">SIGN UP</a> -->
-                <a href="./logout.php"><img src="./Photos/logout2.png" width="25px" height="25px" alt=""></a>
+                <a href="../view/logout.php"><img src="../Photos/logout2.png" width="25px" height="25px" alt=""></a>
             </div>
         </div>
     </header>
@@ -113,7 +113,7 @@ session_start();
                                 continue</b></br></p>
                     </div>
                     <div class="footer-module-link">
-                        <a href="./RegisterLoginForm.html">Sign Up</a>
+                        <a href="../view/RegisterLoginForm.html">Sign Up</a>
                     </div>
                 </div>
             </div>
@@ -137,15 +137,15 @@ session_start();
                 <div class="sub-footer-social">
                     <ul class="hArray">
                         <li>
-                            <a href="https://www.facebook.com/" class="li-facebook"><img src="./Photos/fb-logo.png"
+                            <a href="https://www.facebook.com/" class="li-facebook"><img src="../Photos/fb-logo.png"
                                     alt=""></a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/" class="li-instagram"><img src="./Photos/instagram.png"
+                            <a href="https://www.instagram.com/" class="li-instagram"><img src="../Photos/instagram.png"
                                     alt=""></a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/" class="li-x"><img src="./Photos/xlogo.png" alt=""></a>
+                            <a href="https://twitter.com/" class="li-x"><img src="../Photos/xlogo.png" alt=""></a>
                         </li>
                     </ul>
                 </div>
@@ -163,7 +163,7 @@ session_start();
         </footer>
         <script>
             let i = 0;
-            let img = ['./Photos/bg1.jpg', './Photos/bg6.png', './Photos/bg5.png', './Photos/bg7.jpg'];
+            let img = ['../Photos/bg1.jpg', '../Photos/bg6.png', '../Photos/bg5.png', '../Photos/bg7.jpg'];
     
             function next() {
                 document.getElementById('slideshow').src = img[i];
