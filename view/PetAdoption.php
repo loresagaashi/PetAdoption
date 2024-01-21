@@ -27,13 +27,13 @@ $hide = "";
 
     <body>
         <header>
-            <div class="header-nav">
+            <div class="header-nav" style="background-color: transparent;">
                 <div class="logo">
-                    <img src="../Photos/logo3.png" alt="Pet" />
+                    <img src="../Photos/pet-logo.png" alt="Pet" />
                     <a href="./PetAdoption.php"><strong>Pet Adoption</strong></a>
                 </div>
                 <div class="left">
-                    <a href="#" class="<?php echo $hide ?>">DASHBOARD</a>
+                    <a href="./dashboard/dashboard.php" class="<?php echo $hide ?>">DASHBOARD</a>
                     <a href="./DogAdoption.php">DOGS & PUPPIES</a>
                     <a href="./CatAdoption.php">CATS & KITTENS</a>
                     <a href="#">ANIMAL HOSPITAL</a>

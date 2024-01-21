@@ -9,13 +9,14 @@ body {
 header {
   flex-wrap: wrap;
   width: 100%;
+  background-color: transparent;
 }
 .header-nav {
   width: 100%;
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  background-color: white;
+  background-color: transparent;
   /* background-color: #f5f1ea; */
   margin-top: -10px;
 }
@@ -503,11 +504,13 @@ div {
   }
   header {
     width: 100%;
+    background-color: transparent;
   }
 
   .header-nav {
     flex-direction: column;
     padding: 10px;
+    background-color: transparent;
     margin-top: 0;
   }
 
@@ -717,12 +720,14 @@ div {
   header {
     width: 80%;
     margin: auto;
+    background-color: transparent;
   }
 
   .header-nav {
     flex-direction: row;
     padding: 20px;
     margin-top: 10px;
+    background-color: transparent;
   }
 
   .logo img {

@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN UP</title>
-    <link rel="stylesheet" href="../styles/PetAdoption.css">
-    <link rel="stylesheet" href="../RegisterForm.css">
+    <link rel="stylesheet" href="../Register.css">
 </head>
 
 <body>
     <header>
-        <div class="header-nav">
+        <div class="header-nav" style="background-color: transparent;">
             <div class="logo">
-                <img src="../Photos/logo3.png" alt="Pet">
+                <img src="../Photos/pet-logo.png" alt="Pet">
                 <a href="./PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">

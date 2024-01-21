@@ -19,7 +19,7 @@ session_start();
     <header>
         <div class="header-nav">
             <div class="logo">
-                <img src="../Photos/logo3.png" alt="Pet">
+                <img src="../Photos/pet-logo.png" alt="Pet">
                 <a href="../view/PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
