@@ -1,5 +1,5 @@
 <?php 
-include './database/database.php';
+include_once __DIR__ . '/../database/database.php';
 
 class DogRepository{
     private $connection;
@@ -38,9 +38,7 @@ class DogRepository{
 
         return $dog;
     }
-
     
-
     function getDogById($id){
       $conn = $this->connection;
 
@@ -56,11 +54,11 @@ class DogRepository{
         $conn = $this->connection;
 
         $sql = "UPDATE dog SET name=?,breed=?,color=?,age=?, gender=?, size=?, coatLength=?, image=? where id=?";
-
+        echo($id);
         $statement = $conn->prepare($sql);
 
         $statement->execute([$name,$breed,$color,$age,$gender, $size, $coatLength, $image,$id]);
-        echo "<script> alert('Dog has been updated successfuly!') </script>";
+        // header("location: ../view/dashboard/dogTable.php");
     }
 
     function deleteDogById($id){
@@ -94,7 +92,7 @@ class DogRepository{
     function getdogbyname($name){
         $conn = $this->connection;
 
-      $sql = "SELECT * FROM user WHERE name='$name'";
+      $sql = "SELECT * FROM dog WHERE name='$name'";
       $statement=$conn->query($sql);
       $dog = $statement->fetch();
 

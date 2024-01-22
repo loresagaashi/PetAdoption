@@ -11,8 +11,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $phoneNumber = $_POST["phoneNumber"];  
     $role = 'user';
 
-    echo($birthDate);
-
     if(empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($birthDate) || empty($phoneNumber)){
         echo "All fields are required!";
     }else{
