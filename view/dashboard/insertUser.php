@@ -1,98 +1,112 @@
-<?php include_once '../controllers/RegisterController.php'?>
+<?php
+session_start();
+include_once '../../controllers/UserController.php';
+$hide = "";
+    if(isset($_SESSION['role'])) {
+        if ($_SESSION['role'] == "admin")
+        $hide = "";
+    else
+        $hide = "hide";
+    } else {
+        $hide = "hide";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGN UP</title>
-    <link rel="stylesheet" href="../Register.css">
+    <title>INSERT</title>
+    <link rel="stylesheet" href="../../formDog.css">
+    <style>
+            .hide {
+                display: none;
+            }
+        </style>
 </head>
 
 <body>
     <header>
         <div class="header-nav" style="background-color: transparent;">
             <div class="logo">
-                <img src="../Photos/pet-logo.png" alt="Pet">
-                <a href="./PetAdoption.php"><strong>Pet Adoption</strong></a>
+                <img src="../../Photos/pet-logo.png" alt="Pet">
+                <a href="../PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
+            <a href="./dashboard.php" class="<?php echo $hide ?>">DASHBOARD</a>
                 <a href="./DogAdoption.php">DOGS & PUPPIES</a>
                 <a href="./CatAdoption.php">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
+                <?php 
+                    if (isset($_SESSION['email'])) {
+                        echo '<a href="./logout.php"><img src="../../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
+                    }
+                    else {
+                        echo '<a href="./LogInForm.php"><img src="../../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
+                    }
+                ?>
             </div>
         </div>
 
     </header>
     <div class="container">
-        <!-- <div class="buttons">
-            <button id="signUp" class="border-bottom" onclick="signUp()">Sign Up</button> -->
-        <!-- <button id="signIn" class="sign-in" onclick="signIn()">Sign In</button> -->
-        <!-- </div> -->
         <div class="form-box">
             <form action="<?=$_SERVER['PHP_SELF']?>" method="POST" onsubmit="return submitForm(event)">
-            <h1>Sign Up</h1>
+            <h1>Add a User</h1>
                 <div class="input-group">
                     <!-- Left column -->
                     <div class="input-group-left">
                     <div class="input-field left">
                     <input type="text" name="firstName" placeholder="First Name" id="firstName">
                         <div class="error-message" id="firstNameError"></div>
-                        <p id="errorFName" style="color: red;"></p>
+                        <p id="errorName" style="color: red;"></p>
                     </div>
                     <div class="input-field left">
                     <input type="text" name="lastName" placeholder="Last Name" id="lastName">
                         <div class="error-message" id="lastNameError"></div>
-                        <p id="errorLName" style="color: red;"></p>
+                        <p id="errorBreed" style="color: red;"></p>
                     </div>
                     <div class="input-field left">
                         <input type="text" name="email" placeholder="Email" id="email">
                         <div class="error-message" id="emailError"></div>
-                        <p id="errorEmail" style="color: red;">
-                        <?php
-                if (!empty($emailError)) {
-                    echo "<p style='color: red;'>$emailError</p>";
-                }
-               
-                ?>
-                        
+                        <p id="errorEmail" style="color: red;"></p>
+                    </div>
+                    <div class="input-field left">
+                    <input type="password" name="password" placeholder="Password" id="password">
+                        <div class="error-message" id="passwordError"></div>
+                        <p id="errorPassword" style="color: red;"></p>
                     </div>
                     </div>
            
                     <!-- Right column -->
                 <div class="input-group-right">
                 <div class="input-field right">
-                        <input type="password" name="password" placeholder="Password" id="password">
-                        <div class="error-message" id="passwordError"></div>
-                        <p id="errorPassword" style="color: red;"></p>
+                        <input type="text" name="phoneNumber" placeholder="Phone Number" id="phoneNumber">
+                        <div class="error-message" id="phoneNumberError"></div>
+                        <p id="errorPhoneNumber" style="color: red;"></p>
                     </div>
                     <div class="input-field right">
-                        <input type="text" name="phoneNumber" placeholder="Phone Number" id="phonenumber">
-                        <div class="error-message" id="numberError"></div>
-                        <p id="phonenumberError" style="color: red;"></p>
+                        <input type="date" name="birthDate" placeholder="Birth Date" id="birthDate">
+                        <div class="error-message" id="birthDateError"></div>
+                        <p id="errorBirthDate" style="color: red;"></p>
                     </div>
                     <div class="input-field right">
-                    <input type="date" name="birthDate" id="date">
-                        <div class="error-message" id="dateError"></div>
-                        <p id="errorDate" style="color: red;" aria-placeholder="Enter your birthday"></p>
+                    <input type="text" name="role" placeholder="Role" id="role">
+                        <div class="error-message" id="roleError"></div>
+                        <p id="errorRole" style="color: red;"></p>
                     </div>
+                    <!-- <div class="input-field right">
+                    <input type="file" name="image" placeholder="Dog image" id="image">
+                        <div class="error-message" id="imageError"></div>
+                        <p id="errorImage" style="color: red;"></p>
+                    </div> -->
                 </div>
                    
-                    <a href="" id="forgotPassword" class="forgot-password"></a>
-                    <!-- <p id="forgotPassword" class="forgot-password"></p> -->
-                    <!-- <?php
-                    if ($emailExists) {
-                        echo "<p style='color: red; font-weight: bold;'>$emailError</p>";
-                    }
-                    ?> -->
                 </div>
                 <div class="btn-group">
-                    <button type="submit" name="submitBtn" id="submit">Sign up</button>
+                    <button type="submit" name="submitBtn" id="submit">Submit</button>
                 </div>
-                <div class="register">
-                    <p>Already have an account? <a href="LogInForm.php">SIGN IN</a></p>
-                </div>
-
             </form>
         </div>
     </div>
@@ -163,5 +177,3 @@
     }
 </script>
 </html>
-<?php
-?>

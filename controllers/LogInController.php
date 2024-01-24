@@ -2,30 +2,34 @@
 include_once '../models/user.php';
 include_once '../repository/UserRepository.php';
 
+$emailError="";
+if (isset($_POST['submitbtn'])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
-if(isset($_POST['submitbtn'])){
-    if(empty($_POST['email'])||empty($_POST['password'])){
+    if (empty($_POST['email']) || empty($_POST['password'])) {
         echo "Please fill all fields";
-    }else{
-        $email=$_POST['email'];
-        $password=$_POST['password'];
+    } else {
+        $userRepository = new UserRepository();
+        $userEmail = $userRepository->getUserByEmail($email);
 
-        $userRepository=new UserRepository();
+        if (!$userEmail) {
+            $emailError = "Email not found!";
+        } else {
+            $users = $userRepository->getAllUsers();
 
-        $users=$userRepository->getAllUsers();
-        
-        foreach($users as $user){
-            if($email == $user['email'] && $password == $user['password']){
-                session_start();
-                $_SESSION['id']=$user['id'];
-                $_SESSION['email']=$email;
-                $_SESSION['password']=$password;
-                $_SESSION['role']=$user['role'];
+            foreach ($users as $user) {
+                if ($email == $user['email'] && $password == $user['password']) {
+                    session_start();
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['email'] = $email;
+                    $_SESSION['password'] = $password;
+                    $_SESSION['role'] = $user['role'];
 
-                header("location:../view/PetAdoption.php");
-                exit();
+                    header("location:../view/PetAdoption.php");
+                    exit();
+                }
             }
-            
         }
     }
 }

@@ -59,19 +59,19 @@
             $this->password = $password;
         }       
         public function setEmail($email) {
-            return $this->email;
+            // return $this->email;
             $this->email = $email;
         }
         public function setPhoneNumber($phoneNumber) {
-            return $this->phoneNumber;
+            // return $this->phoneNumber;
             $this->phoneNumber = $phoneNumber;
         }
         public function setBirthDate($birthDate) {
-            return $this->birthDate;
+            // return $this->birthDate;
             $this->birthDate = $birthDate;
         }     
         public function setRole($role) {
-            return $this->role;
+            // return $this->role;
             $this->role = $role;
         }
         

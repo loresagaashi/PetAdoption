@@ -44,6 +44,7 @@ include_once '../controllers/LogInController.php';
                 if (!empty($emailError)) {
                     echo "<p style='color: red;'>$emailError</p>";
                 }
+               
                 ?>
                     <div class="input-field" id="passwordField">
                         <input type="password" name="password" placeholder="Password" id="password">

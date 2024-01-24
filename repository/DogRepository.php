@@ -71,24 +71,6 @@ class DogRepository{
         echo "<script> alert('Dog has been deleted successfuly!') </script>";
     }
 
-    // function makeRez($hotelId,$userId,$phone,$numpeople,$checkin,$durability,$roompreference,$anythingelse){
-    //     $conn = $this->connection;
-        
-    //     $sql = "INSERT INTO userhotel (hotid,userid,phonenumber,numpeople,checkin,durability,roompref,anythingelse) VALUES (?,?,?,?,?,?,?,?)";
-        
-    //     $statement = $conn->prepare($sql);
-    //     $statement->execute([$hotelId,$userId,$phone,$numpeople,$checkin,$durability,$roompreference,$anythingelse]);
-    //     echo "<script> alert('User has been inserted successfuly!') </script>";
-    // }
-
-    // function delRez($userId,$hotelId){
-    //     $conn=$this->connection;
-
-    //     $sql=" DELETE FROM userhotel WHERE HotID=? AND UserID=?";
-    //     $statement=$conn->prepare($sql);
-    //     $statement->execute([$hotelId,$userId]);
-    //     echo "<script>alert('CourseUser has been inserted succesfully!')</script>";
-    // }
     function getdogbyname($name){
         $conn = $this->connection;
 

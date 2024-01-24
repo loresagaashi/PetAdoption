@@ -1,5 +1,5 @@
 <?php 
-include '../database/database.php';
+include_once __DIR__ . '/../database/database.php';
 
 class UserRepository{
     private $connection;
@@ -45,61 +45,48 @@ class UserRepository{
     function getUserById($id){
       $conn = $this->connection;
 
-      $sql = "SELECT * FROM user WHERE id='$id'";
+      $sql = "SELECT * FROM users WHERE id='$id'";
       $statement=$conn->query($sql);
-      $user = $statement->fetch();
+      $users = $statement->fetch();
 
-      return $user;
+      return $users;
     }
 
 
-    function updateUser($id,$name,$email,$password,$admin){
+    function updateUser($id,$firstName,$lastName,$email,$password,$phoneNumber, $birthDate,$role){
         $conn = $this->connection;
 
-        $sql = "UPDATE user SET name=?,email=?,password=?,admin=? where id=?";
+        $sql = "UPDATE users SET firstName=?,lastName=?,email=?,password=?, phoneNumber=?, birthDate=?, role=? where id=?";
 
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$name,$email,$password,$admin,$id]);
+        $statement->execute([$firstName,$lastName,$email,$password,$phoneNumber,$birthDate,$role, $id]);
         echo "<script> alert('User has been updated successfuly!') </script>";
     }
 
     function deleteUserById($id){
         $conn = $this->connection;
-
-        $sql = "DELETE FROM user WHERE id=?";
-
-        $statement = $conn->prepare($sql);
-        $statement->execute([$id]);
-        echo "<script> alert('User has been deleted successfuly!') </script>";
+    
+        try {
+            $sql = "DELETE FROM users WHERE id=?";
+            $statement = $conn->prepare($sql);
+            $statement->execute([$id]);
+            header("location: ./userTable.php");
+            exit();
+        } catch (PDOException $e) {
+            echo "Error deleting user: " . $e->getMessage();
+        }
     }
+    
 
-    function makeRez($hotelId,$userId,$phone,$numpeople,$checkin,$durability,$roompreference,$anythingelse){
-        $conn = $this->connection;
-        
-        $sql = "INSERT INTO userhotel (hotid,userid,phonenumber,numpeople,checkin,durability,roompref,anythingelse) VALUES (?,?,?,?,?,?,?,?)";
-        
-        $statement = $conn->prepare($sql);
-        $statement->execute([$hotelId,$userId,$phone,$numpeople,$checkin,$durability,$roompreference,$anythingelse]);
-        echo "<script> alert('User has been inserted successfuly!') </script>";
-    }
-
-    function delRez($userId,$hotelId){
-        $conn=$this->connection;
-
-        $sql=" DELETE FROM userhotel WHERE HotID=? AND UserID=?";
-        $statement=$conn->prepare($sql);
-        $statement->execute([$hotelId,$userId]);
-        echo "<script>alert('CourseUser has been inserted succesfully!')</script>";
-    }
     function getuserbyemail($email){
         $conn = $this->connection;
 
-      $sql = "SELECT * FROM user WHERE email='$email'";
+      $sql = "SELECT * FROM users WHERE email='$email'";
       $statement=$conn->query($sql);
-      $user = $statement->fetch();
+      $users = $statement->fetch();
 
-      return $user;
+      return $users;
     }
 }
 ?>

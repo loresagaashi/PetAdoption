@@ -56,6 +56,11 @@ $hide = "";
            
             <div class="box">
                 <div class="box1">
+                    <a href="userTable.php">
+                    <button class="button">VIEW USER</button>
+                    </a>
+                </div>
+                <div class="box1">
                     <a href="dogTable.php">
                     <button class="button">VIEW DOGS</button>
                     </a>

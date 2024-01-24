@@ -3,5 +3,6 @@
   
   session_destroy();
 
-  header("location:LoginForm.php");
+  // header("location:LoginForm.php");
+  header("location:PetAdoption.php");
 ?>
