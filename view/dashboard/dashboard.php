@@ -16,8 +16,7 @@ $hide = "";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../styles/PetAdoption.css">
-    <link rel="stylesheet" href="../../dashboard.css">
+    <link rel="stylesheet" href="../../dashboard2.css">
     <style>
             .hide {
                 display: none;
@@ -57,7 +56,7 @@ $hide = "";
             <div class="box">
                 <div class="box1">
                     <a href="userTable.php">
-                    <button class="button">VIEW USER</button>
+                    <button class="button">VIEW USERS</button>
                     </a>
                 </div>
                 <div class="box1">

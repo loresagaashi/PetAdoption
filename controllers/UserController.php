@@ -3,13 +3,13 @@ include_once __DIR__ . '/../repository/UserRepository.php';
 include_once __DIR__ . '/../models/user.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $name = $_POST["firstName"];
-    $breed = $_POST["lastName"];
-    $color = $_POST["email"];
-    $coatLength = $_POST["password"];
-    $age = $_POST["phoneNumber"]; 
-    $gender = $_POST["birthDate"];  
-    $size = $_POST["role"];  
+    $firstName = $_POST["firstName"];
+    $lastName = $_POST["lastName"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $phoneNumber = $_POST["phoneNumber"]; 
+    $birthDate = $_POST["birthDate"];  
+    $role = $_POST["role"];  
 
     if(empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($phoneNumber) || empty($birthDate) || empty($role)){
         echo "All fields are required!";
