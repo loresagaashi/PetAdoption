@@ -21,11 +21,13 @@ class DogRepository{
         $size = $dog->getSize();
         $coatLength = $dog->getCoatLength();
         $image = $dog->getImage();
+        $createdBy = $dog->getCreatedBy();
+        $modifiedBy = $dog->getModifiedBy();
 
-        $sql = "INSERT INTO dog (id, name, breed, color, age, gender, size, coatLength,image) VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO dog (id, name, breed, color, age, gender, size, coatLength,image,createdBy,modifiedBy) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         
         $statement = $conn->prepare($sql);
-        $statement->execute([$id,$name,$breed,$color, $age, $gender, $size, $coatLength, $image]);
+        $statement->execute([$id,$name,$breed,$color, $age, $gender, $size, $coatLength, $image, $createdBy, $modifiedBy]);
         echo "<script> alert('Dog has been inserted successfuly!') </script>";
     }
 
@@ -50,14 +52,14 @@ class DogRepository{
     }
 
 
-    function updateDog($id,$name,$breed,$color,$age,$gender, $size, $coatLength, $image){
+    function updateDog($id,$name,$breed,$color,$age,$gender, $size, $coatLength, $image, $createdBy, $modifiedBy){
         $conn = $this->connection;
 
-        $sql = "UPDATE dog SET name=?,breed=?,color=?,age=?, gender=?, size=?, coatLength=?, image=? where id=?";
+        $sql = "UPDATE dog SET name=?,breed=?,color=?,age=?, gender=?, size=?, coatLength=?, image=?, createdBy=?, modifiedBy=? where id=?";
         echo($id);
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$name,$breed,$color,$age,$gender, $size, $coatLength, $image,$id]);
+        $statement->execute([$name,$breed,$color,$age,$gender, $size, $coatLength, $image, $createdBy, $modifiedBy, $id]);
         // header("location: ../view/dashboard/dogTable.php");
     }
 

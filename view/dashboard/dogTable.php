@@ -41,7 +41,7 @@ if (isset($_SESSION['role'])) {
                 <a href="#">ANIMAL SHELTERS</a>
                 <?php
                 if (isset($_SESSION['email'])) {
-                    echo '<a href="./logout.php"><img src="../../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
+                    echo '<a href="../logout.php"><img src="../../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
                 } else {
                     echo '<a href="./LogInForm.php"><img src="../../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
                 }
@@ -67,6 +67,8 @@ if (isset($_SESSION['role'])) {
                     <th>Size</th>
                     <th>Coat Length</th>
                     <th>Image</th>
+                    <th>Created By</th>
+                    <th>Modified By</th>
                     <th>Actions</th>
                 </tr>
                 <?php
@@ -86,6 +88,8 @@ if (isset($_SESSION['role'])) {
                             <td>$dog[size]</td>
                             <td>$dog[coatLength]</td>
                             <td>$dog[image]</td>
+                            <td>$dog[createdBy]</td>
+                            <td>$dog[modifiedBy]</td>
                             <td colspan='2'><div>
                             <button class='button-update'>
                             <a href='updateDog.php?id=$dog[id]'>Update</a>

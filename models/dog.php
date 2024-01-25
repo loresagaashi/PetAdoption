@@ -11,8 +11,10 @@ class Dog
     private $size;
     private $coatLength;
     private $image;
+    private $createdBy;
+    private $modifiedBy;
 
-    public function __construct($id, $name, $breed, $color, $age, $gender, $size, $coatLength, $image)
+    public function __construct($id, $name, $breed, $color, $age, $gender, $size, $coatLength, $image, $createdBy, $modifiedBy)
     {
         $this->id = $id;
         $this->name = $name;
@@ -23,6 +25,8 @@ class Dog
         $this->size = $size;
         $this->coatLength = $coatLength;
         $this->image=$image;
+        $this->createdBy = $createdBy;
+        $this->modifiedBy = $modifiedBy;
     }
     public function getId()
     {
@@ -59,6 +63,12 @@ class Dog
     public function getImage(){
         return $this->image;
     }
+    public function getCreatedBy(){
+       return $this->createdBy;
+    }
+    public function getModifiedBy(){
+        return $this->modifiedBy;
+    }
     public function setId($id)
     {
         $this->id = $id;
@@ -94,6 +104,12 @@ class Dog
     public function setImage($image)
     {
         $this->image = $image;
+    }
+    public function setCreatedBy($createdBy){
+        $this->createdBy = $createdBy;
+    }
+    public function setModifiedBy($modifiedBy){
+        $this->modifiedBy = $modifiedBy;
     }
 }
 ?>

@@ -110,7 +110,7 @@ if (isset($_SESSION['role'])) {
                         <div class="section-con">
                             <div class="section-item">
                                 <a href=""></a>
-                                <a href="./BrianDetails.php">
+                                <a href="./BrianDetails.php?id=<?=$dog['id']?>">
                                     <div class="img-pet">
                                         <img class="section-img" src=<?='../Photos/'.$dog['image']?> alt="dogforadoption1"
                                             width="143px" height="191px">

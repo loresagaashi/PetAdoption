@@ -50,12 +50,22 @@ $hide = "";
         </div>
     </header>
     <main>
+        <?php
+          include_once '../repository/DogRepository.php';
+          $dogId = isset($_GET['id']) ? $_GET['id'] : null;
 
+          if ($dogId !== null) {
+              $dogRepository = new DogRepository();
+              $dog = $dogRepository->getDogById($dogId);
+          } else {
+              echo "Error: 'id' is not set in the URL.";
+          }
+        ?>
         <div class="main main-common" style="height: auto !important;">
             <div class="container">
                 <div class="detail-title">
-                    <h1>Brian</h1>
-                    <img src="../Photos/male.png" alt="" width="50px" height="50px">
+                    <h1><?=$dog['name']?></h1>
+                    <img src="../Photos/<?=strtolower($dog['gender'])?>.png" alt="" width="50px" height="50px">
                 </div>
             </div>
             <div class="main-bottom">
@@ -79,27 +89,27 @@ $hide = "";
                                 <tbody></tbody>
                                 <tr>
                                     <td>Breed</td>
-                                    <td>Golden Retriever</td>
+                                    <td><?=$dog['breed']?></td>
                                 </tr>
                                 <tr>
                                     <td>Color</td>
-                                    <td>Gold</td>
+                                    <td><?=$dog['color']?></td>
                                 </tr>
                                 <tr>
                                     <td>Age</td>
-                                    <td>Puppy</td>
+                                    <td><?=$dog['age']?></td>
                                 </tr>
                                 <tr>
                                     <td>Gender</td>
-                                    <td>Male</td>
+                                    <td><?=$dog['gender']?></td>
                                 </tr>
                                 <tr>
                                     <td>Size</td>
-                                    <td>Large</td>
+                                    <td><?=$dog['size']?></td>
                                 </tr>
                                 <tr>
                                     <td>Coat Length</td>
-                                    <td>Long</td>
+                                    <td><?=$dog['coatLength']?></td>
                                 </tr>
 
                             </table>
@@ -271,11 +281,15 @@ $hide = "";
     </footer>
     <script>
         let i = 0;
-        let img = ['../Photos/briandetails2.png', '../Photos/briandetails9.png', '../Photos/briandetails7.JPG', '../Photos/briandetails4.png'];
-
+        let imgArr = []
+        for(j=1; j < 4; j++){
+            let img = `../Photos/<?=strtolower($dog['name'])?>details${j}.png`;
+            imgArr.push(img);
+        };
+        
         function next() {
-            document.getElementById('slideshow').src = img[i];
-            if (i < img.length - 1) {
+            document.getElementById('slideshow').src = imgArr[i];
+            if (i < imgArr.length - 1) {
                 i++;
             }
             else {
@@ -286,12 +300,12 @@ $hide = "";
 
         function prev() {
             if (i == 0) {
-                i = img.length - 1;
+                i = imgArr.length - 1;
             }
             else {
                 i--;
             }
-            document.getElementById('slideshow').src=img[i];
+            document.getElementById('slideshow').src=imgArr[i];
         }
 
 

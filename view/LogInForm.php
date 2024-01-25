@@ -8,7 +8,7 @@ include_once '../controllers/LogInController.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOG IN</title>
-    <link rel="stylesheet" href="../Login.css">
+    <link rel="stylesheet" href="../login.css">
 </head>
 
 <body>
