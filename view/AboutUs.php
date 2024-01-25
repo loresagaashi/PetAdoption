@@ -1,10 +1,14 @@
 <?php
 session_start();
-
-// if (!isset($_SESSION['email']) &&  !isset($_COOKIE['auth_token'])) {
-//     header("location:LoginForm.php");
-//     exit();
-// }
+$hide = "";
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] == "admin")
+        $hide = "";
+    else
+        $hide = "hide";
+} else {
+    $hide = "hide";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +16,12 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Adoption</title>
-    <link rel="stylesheet" href="../styles/AboutUs.css">
-    <link rel="stylesheet" href="../styles/RegisterLoginForm.css" >
+    <link rel="stylesheet" href="../styles/About.css">
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,12 +31,18 @@ session_start();
                 <a href="../view/PetAdoption.php"><strong>Pet Adoption</strong></a>
             </div>
             <div class="left">
+                <a href="./dashboard/dashboard.php" class="<?php echo $hide ?>">DASHBOARD</a>
                 <a href="../view/DogAdoption.php">DOGS & PUPPIES</a>
                 <a href="../view/CatAdoption.php">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
-                <!-- <a href="./RegisterLoginForm.html">SIGN UP</a> -->
-                <a href="../view/logout.php"><img src="../Photos/logout2.png" width="25px" height="25px" alt=""></a>
+                <?php
+                if (isset($_SESSION['email'])) {
+                    echo '<a href="./logout.php"><img src="../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
+                } else {
+                    echo '<a href="./LogInForm.php"><img src="../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
+                }
+                ?>
             </div>
         </div>
     </header>
