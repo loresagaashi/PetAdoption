@@ -10,6 +10,7 @@ $hide = "";
     } else {
         $hide = "hide";
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

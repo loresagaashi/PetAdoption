@@ -1,14 +1,14 @@
 <?php
 session_start();
 $hide = "";
-    if(isset($_SESSION['role'])) {
-        if ($_SESSION['role'] == "admin")
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] == "admin")
         $hide = "";
     else
         $hide = "hide";
-    } else {
-        $hide = "hide";
-    }
+} else {
+    $hide = "hide";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +19,28 @@ $hide = "";
     <title>Dog Adoption</title>
     <link rel="stylesheet" href="../styles/DogAdoption.css" />
     <style>
-            .hide {
-                display: none;
-            }
-        </style>
+        .hide {
+            display: none;
+        }
+        .dog-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .section-con {
+        width: 19%; 
+        margin-bottom: 20px; 
+        height: 500px;
+    }
+
+    .section-img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+    </style>
+    
 </head>
 
 <body>
@@ -38,13 +56,12 @@ $hide = "";
                 <a href="./CatAdoption.php">CATS & KITTENS</a>
                 <a href="#">ANIMAL HOSPITAL</a>
                 <a href="#">ANIMAL SHELTERS</a>
-                <?php 
-                    if (isset($_SESSION['email'])) {
-                        echo '<a href="./logout.php"><img src="../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
-                    }
-                    else {
-                        echo '<a href="./LogInForm.php"><img src="../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
-                    }
+                <?php
+                if (isset($_SESSION['email'])) {
+                    echo '<a href="./logout.php"><img src="../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
+                } else {
+                    echo '<a href="./LogInForm.php"><img src="../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
+                }
                 ?>
             </div>
         </div>
@@ -67,221 +84,65 @@ $hide = "";
                 <h1 class="title">Available dogs and puppies </h1>
                 <!-- <h2 class="title">Adoptable Dogs</h2> -->
                 <div class="section-list">
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/briandetails11.png" alt="dogforadoption1"
-                                    width="143px" height="191px">
-                            </div>
-                            </a>
-                            <div class="info-gender">
-                                <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-name">Brian</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Puppy</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <a href="./BrianDetails.php">
-                                            Adopt Me
-                                        </a>
-                                        <!-- Adopt Me -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/dogforadoption11.png" alt="dogforadoption1">
-                            </div>
-                            <div class="info-gender">
-                                <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-name">Ari</div>
-                                <div class="info-feature">
-                                    <p>Big </p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href="#"> -->
-                                        Adopt Me
-                                        <!-- </a> -->
+                    <?php
+                    include_once '../models/dog.php';
+                    include_once '../repository/DogRepository.php';
 
-                                    </button>
+                    $dogRepository = new DogRepository();
+                    $dogs = $dogRepository->getAllDogs();
+                    $dogCounter = 0;
+                    ?>
+                    <?php
+                    foreach ($dogs as $dog) {
+                        // if ($dogCounter < 5) {
+                        //     $dogCounter++;
+                            ?>
+                            <div class="section-con">
+                                <div class="section-item">
+                                    <a href=""></a>
+                                    <a href="./BrianDetails.php?id=<?=$dog['id']?>">
+                                    <div class="img-pet">
+                                        <img class="section-img" src=<?= '../Photos/' . $dog['image'] ?> alt="dogforadoption1"
+                                            >
+                                    </div>
+                                    </a>
+                                    <div class="info-gender">
+                                        <?php
+                                        if (strtolower($dog['gender']) == 'male') {
+                                            echo '<img src="../Photos/male.png" alt="" width="20px" height="20px">';
+                                        } else {
+                                            echo '<img src="../Photos/female.png" alt="" width="20px" height="20px">';
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="section-info">
+                                        <div class="info-name">
+                                            <?= $dog['name'] ?>
+                                        </div>
+                                        <div class="info-feature">
+                                            <p>
+                                                <?= $dog['breed'] ?>
+                                            </p>
+                                            <p>
+                                                <?= $dog['size'] ?>
+                                            </p>
+                                        </div>
+                                        <div class="seciton-button">
+                                            <button>
+                                                <a href="./BrianDetails.php?id=<?=$dog['id']?>">
+                                                    Adopt Me
+                                                </a>
+                                                <!-- Adopt Me -->
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/dogforadoption2.png" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Ollie</div>
-                                <div class="info-feature">
-                                    <p>Medium</p>
-                                    <p>Puppy</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href="./DogAdoption.html"> -->
-                                        Adopt Me
-                                        <!-- </a> -->
-                                        <!-- Adopt Me -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/dogforadoption3.png" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Tod</div>
-                                <div class="info-feature">
-                                    <p>Big</p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href="./DogAdoption.html"> -->
-                                        Adopt Me
-                                        <!-- </a> -->
-
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="home">
-            <div class="section">
-                <!-- <h2 class="title">Adoptable Cats</h2> -->
-                <div class="section-list">
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/dogforadoption4.png" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Max</div>
-                                <div class="info-feature">
-                                    <p>Medium</p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href="./DogAdoption.html"> -->
-                                        Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/dogforadoption7.jpg" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Stella</div>
-                                <div class="info-feature">
-                                    <p>Big</p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href="./DogAdoption.html"> -->
-                                        Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/dogforadoption8.jpg" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Bailey</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Baby</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href="./DogAdoption.html"> -->
-                                        Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/dogforadoption133.png" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Teddy</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Puppy</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href="./DogAdoption.html"> -->
-                                        Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <?php
+                        }
+                    // }
+                    ?>
+                   
                 </div>
             </div>
         </div>

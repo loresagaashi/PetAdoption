@@ -19,10 +19,27 @@ $hide = "";
     <title>Cat Adoption</title>
     <link rel="stylesheet" href="../styles/CatAdoption.css" />
     <style>
-            .hide {
-                display: none;
-            }
-        </style>
+        .hide {
+            display: none;
+        }
+        .dog-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .section-con {
+        width: 19%; 
+        margin-bottom: 20px; 
+        height: 500px;
+    }
+
+    .section-img {
+        width: 100%;
+        height: 80%; 
+        object-fit: cover; 
+    }
+    </style>
 </head>
 
 <body>

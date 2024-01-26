@@ -23,6 +23,11 @@ if (isset($_SESSION['role'])) {
         .hide {
             display: none;
         }
+        header{
+            font-weight: 500;
+    background: transparent;
+    backdrop-filter: blur(20px);
+        }
     </style>
 </head>
 
@@ -88,7 +93,7 @@ if (isset($_SESSION['role'])) {
                             <button class='button-update'>
                             <a href='updateUser.php?id=$user[id]'>Update</a>
                           </button>
-                            <button class='button-delete'>
+                            <button class='button-delete' onclick='confirmDelete($user[id])'>
                             <a href='deleteUser.php?id=$user[id]'>Delete</a>
                             </div>
                           </button>
@@ -98,6 +103,7 @@ if (isset($_SESSION['role'])) {
                         ";
                       }
                 ?>
+                
             </table>
         </div>
     </div>
@@ -164,6 +170,13 @@ if (isset($_SESSION['role'])) {
             lastNameError.innerText = "";
             emailError.innerText = "";
             passwordError.innerText = "";
+        }
+    }
+    function confirmDelete(userId) {
+        if (confirm("Are you sure you want to delete this user?")) {
+            window.location.href = 'deleteUser.php?id=' + userId;
+        } else {
+            event.preventDefault();
         }
     }
 </script>

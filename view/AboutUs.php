@@ -127,7 +127,7 @@ if (isset($_SESSION['role'])) {
                                 continue</b></br></p>
                     </div>
                     <div class="footer-module-link">
-                        <a href="../view/RegisterLoginForm.html">Sign Up</a>
+                        <a href="../view/RegisterForm.php">Sign Up</a>
                     </div>
                 </div>
             </div>
