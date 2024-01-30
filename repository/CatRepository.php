@@ -1,5 +1,5 @@
 <?php 
-include './database/database.php';
+include_once __DIR__ . '/../database/database.php';
 
 class CatRepository{
     private $connection;

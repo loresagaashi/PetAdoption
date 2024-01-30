@@ -86,7 +86,7 @@ $hide = "";
                     include_once '../repository/CatRepository.php';
                     
                     $catRepository = new CatRepository();
-                    $cats = $dogRepository->getAllCats();
+                    $cats = $catRepository->getAllCats();
                     $catCounter = 0;
                     ?>
                     <?php
@@ -95,15 +95,15 @@ $hide = "";
                             <div class="section-con">
                                 <div class="section-item">
                                     <a href=""></a>
-                                    <a href="./BrianDetails.php?id=<?=$dog['id']?>">
+                                    <a href="./CatDetails.php?id=<?=$cat['id']?>">
                                     <div class="img-pet">
-                                        <img class="section-img" src=<?= '../Photos/' . $dog['image'] ?> alt="dogforadoption1"
+                                        <img class="section-img" src=<?= '../Photos/' . $cat['image'] ?> alt="dogforadoption1"
                                             >
                                     </div>
                                     </a>
                                     <div class="info-gender">
                                         <?php
-                                        if (strtolower($dog['gender']) == 'male') {
+                                        if (strtolower($cat['gender']) == 'male') {
                                             echo '<img src="../Photos/male.png" alt="" width="20px" height="20px">';
                                         } else {
                                             echo '<img src="../Photos/female.png" alt="" width="20px" height="20px">';
@@ -112,19 +112,19 @@ $hide = "";
                                     </div>
                                     <div class="section-info">
                                         <div class="info-name">
-                                            <?= $dog['name'] ?>
+                                            <?= $cat['name'] ?>
                                         </div>
                                         <div class="info-feature">
                                             <p>
-                                                <?= $dog['breed'] ?>
+                                                <?= $cat['breed'] ?>
                                             </p>
                                             <p>
-                                                <?= $dog['size'] ?>
+                                                <?= $cat['size'] ?>
                                             </p>
                                         </div>
                                         <div class="seciton-button">
                                             <button>
-                                                <a href="./BrianDetails.php?id=<?=$dog['id']?>">
+                                                <a href="./CatDetails.php?id=<?=$cat['id']?>">
                                                     Adopt Me
                                                 </a>
                                                 <!-- Adopt Me -->

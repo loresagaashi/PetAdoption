@@ -72,7 +72,7 @@ if (isset($_SESSION['role'])) {
                     </a>
                 </div>
                 <div class="box1">
-                    <a href="./insertCat.php">
+                    <a href="./catTable.php">
                         <button class="button">VIEW CATS</button>
                     </a>
                     <!-- </div>

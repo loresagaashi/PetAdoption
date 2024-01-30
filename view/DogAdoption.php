@@ -22,25 +22,26 @@ if (isset($_SESSION['role'])) {
         .hide {
             display: none;
         }
+
         .dog-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-    .section-con {
-        width: 19%; 
-        margin-bottom: 20px; 
-        height: 500px;
-    }
+        .section-con {
+            width: 19%;
+            margin-bottom: 20px;
+            height: 500px;
+        }
 
-    .section-img {
-        width: 100%;
-        height: 80%;
-        object-fit: cover;
-    }
+        .section-img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
     </style>
-    
+
 </head>
 
 <body>
@@ -96,53 +97,53 @@ if (isset($_SESSION['role'])) {
                     foreach ($dogs as $dog) {
                         // if ($dogCounter < 5) {
                         //     $dogCounter++;
-                            ?>
-                            <div class="section-con">
-                                <div class="section-item">
-                                    <a href=""></a>
-                                    <a href="./BrianDetails.php?id=<?=$dog['id']?>">
+                        ?>
+                        <div class="section-con">
+                            <div class="section-item">
+                                <a href=""></a>
+                                <a href="./BrianDetails.php?id=<?= $dog['id'] ?>">
                                     <div class="img-pet">
-                                        <img class="section-img" src=<?= '../Photos/' . $dog['image'] ?> alt="dogforadoption1"
-                                            >
+                                        <img class="section-img" src=<?= '../Photos/' . $dog['image'] ?>
+                                            alt="dogforadoption1">
                                     </div>
-                                    </a>
-                                    <div class="info-gender">
-                                        <?php
-                                        if (strtolower($dog['gender']) == 'male') {
-                                            echo '<img src="../Photos/male.png" alt="" width="20px" height="20px">';
-                                        } else {
-                                            echo '<img src="../Photos/female.png" alt="" width="20px" height="20px">';
-                                        }
-                                        ?>
+                                </a>
+                                <div class="info-gender">
+                                    <?php
+                                    if (strtolower($dog['gender']) == 'male') {
+                                        echo '<img src="../Photos/male.png" alt="" width="20px" height="20px">';
+                                    } else {
+                                        echo '<img src="../Photos/female.png" alt="" width="20px" height="20px">';
+                                    }
+                                    ?>
+                                </div>
+                                <div class="section-info">
+                                    <div class="info-name">
+                                        <?= $dog['name'] ?>
                                     </div>
-                                    <div class="section-info">
-                                        <div class="info-name">
-                                            <?= $dog['name'] ?>
-                                        </div>
-                                        <div class="info-feature">
-                                            <p>
-                                                <?= $dog['breed'] ?>
-                                            </p>
-                                            <p>
-                                                <?= $dog['size'] ?>
-                                            </p>
-                                        </div>
-                                        <div class="seciton-button">
-                                            <button>
-                                                <a href="./BrianDetails.php?id=<?=$dog['id']?>">
-                                                    Adopt Me
-                                                </a>
-                                                <!-- Adopt Me -->
-                                            </button>
-                                        </div>
+                                    <div class="info-feature">
+                                        <p>
+                                            <?= $dog['breed'] ?>
+                                        </p>
+                                        <p>
+                                            <?= $dog['size'] ?>
+                                        </p>
+                                    </div>
+                                    <div class="seciton-button">
+                                        <button>
+                                            <a href="./BrianDetails.php?id=<?= $dog['id'] ?>">
+                                                Adopt Me
+                                            </a>
+                                            <!-- Adopt Me -->
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                        }
+                        </div>
+                        <?php
+                    }
                     // }
                     ?>
-                   
+
                 </div>
             </div>
         </div>

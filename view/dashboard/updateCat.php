@@ -18,7 +18,7 @@ $user = $userRepository->getUserById($id);
 
 if ($catId !== null) {
     $catRepository = new CatRepository();
-    $cat = $cat->getCatById($catId);
+    $cat = $catRepository->getCatById($catId);
 } else {
     echo "Error: 'id' is not set in the URL.";
 }
@@ -46,7 +46,7 @@ if (isset($_POST['submitBtn'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPDATE</title>
-    <link rel="stylesheet" href="../../formCat.css">
+    <link rel="stylesheet" href="../../formDog.css">
     <style>
         .hide {
             display: none;
