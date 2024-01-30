@@ -165,67 +165,62 @@ if (isset($_SESSION['role'])) {
             <div class="section">
                 <h2 class="title">Adoptable Cats</h2>
                 <div class="section-list">
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/catforadoption1.png" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Albie</div>
-                                <div class="info-feature">
-                                    <p>Medium</p>
-                                    <p>Adult</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/catforadoption2.png" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Doc</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Baby</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <div class="img-pet">
-                                <img class="section-img" src="../Photos/catforadoption3.png" alt="dogforadoption1">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Zombie</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Baby</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    include_once '../models/cat.php';
+                    include_once '../repository/CatRepository.php';
 
+                    $catRepository = new CatRepository();
+                    $cats = $catRepository->getAllCats();
+                    $catCounter = 0;
+                    ?>
+                    <?php
+                    foreach ($dogs as $dog) {
+                        if ($dogCounter < 3) {
+                            $dogCounter++;
+                            ?>
+                            <div class="section-con">
+                                <div class="section-item">
+                                    <a href=""></a>
+                                    <a href="./BrianDetails.php?id=<?= $dog['id'] ?>">
+                                        <div class="img-pet">
+                                            <img class="section-img" src=<?= '../Photos/' . $dog['image'] ?> alt="dogforadoption1"
+                                                width="143px" height="191px">
+                                        </div>
+                                    </a>
+                                    <div class="info-gender">
+                                        <?php
+                                        if (strtolower($dog['gender']) == 'male') {
+                                            echo '<img src="../Photos/male.png" alt="" width="20px" height="20px">';
+                                        } else {
+                                            echo '<img src="../Photos/female.png" alt="" width="20px" height="20px">';
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="section-info">
+                                        <div class="info-name">
+                                            <?= $dog['name'] ?>
+                                        </div>
+                                        <div class="info-feature">
+                                            <p>
+                                                <?= $dog['breed'] ?>
+                                            </p>
+                                            <p>
+                                                <?= $dog['size'] ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
                     <div class="section-con" id="section-con-m">
-                        <a class="link" href="./CatAdoption.php">
+                        <a class="link" href="./DogAdoption.php">
                             <div class="section-item-more">
-                                <img src="../Photos/cat.png" alt="" width="30%" height="30%">
-                                <p>CATS</p>
-                                <p>View more cats available</p>
+                                <img src="../Photos/dog2.png" alt="" width="30%" height="30%">
+                                <p>DOGS</p>
+                                <p>View more dogs available</p>
                                 <div class="go">
                                     <img src="../Photos/arrow.png" alt="">
                                 </div>

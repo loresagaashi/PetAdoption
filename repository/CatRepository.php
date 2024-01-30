@@ -1,7 +1,7 @@
 <?php 
 include './database/database.php';
 
-class DogRepository{
+class CatRepository{
     private $connection;
 
     function __construct(){
@@ -21,11 +21,13 @@ class DogRepository{
         $size = $cat->getSize();
         $coatLength = $cat->getCoatLength();
         $image = $cat->getImage();
+        $createdBy = $cat->getCreatedBy();
+        $modifiedBy = $cat->getModifiedBy();
 
-        $sql = "INSERT INTO cat (id, name, breed, color, age, gender, size, coatLength,image) VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO cat (id, name, breed, color, age, gender, size, coatLength,image, createdBy, modifiedBy) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         
         $statement = $conn->prepare($sql);
-        $statement->execute([$id,$name,$breed,$color, $age, $gender, $size, $coatLength, $image]);
+        $statement->execute([$id,$name,$breed,$color, $age, $gender, $size, $coatLength, $image, $createdBy, $modifiedBy]);
         echo "<script> alert('Cat has been inserted successfuly!') </script>";
     }
 
@@ -39,12 +41,11 @@ class DogRepository{
         return $cat;
     }
 
-    
 
     function getCatById($id){
       $conn = $this->connection;
 
-      $sql = "SELECT * FROM dog WHERE id='$id'";
+      $sql = "SELECT * FROM cat WHERE id='$id'";
       $statement=$conn->query($sql);
       $cat = $statement->fetch();
 
@@ -52,14 +53,14 @@ class DogRepository{
     }
 
 
-    function updateCat($id,$name,$breed,$color,$age,$gender, $size, $coatLength, $image){
+    function updateCat($id,$name,$breed,$color,$age,$gender, $size, $coatLength, $image, $createdBy, $modifiedBy){
         $conn = $this->connection;
 
-        $sql = "UPDATE cat SET name=?,breed=?,color=?,age=?, gender=?, size=?, coatLength=?, image=? where id=?";
-
+        $sql = "UPDATE cat SET name=?,breed=?,color=?,age=?, gender=?, size=?, coatLength=?, image=?, createdBy=?, modifiedBy=? where id=?";
+        echo($id);
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$name,$breed,$color,$age,$gender, $size, $coatLength, $image,$id]);
+        $statement->execute([$name,$breed,$color,$age,$gender, $size, $coatLength, $image, $createdBy, $modifiedBy,$id]);
         echo "<script> alert('Cat has been updated successfuly!') </script>";
     }
 

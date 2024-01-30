@@ -81,232 +81,61 @@ $hide = "";
             <div class="section">
                 <h1 class="title">Available cats and kittens </h1>
                 <div class="section-list">
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption8.png" alt="dogforadoption1"
-                                        width="143px" height="191px">
-                                </div>
-                            </a>
-                            <div class="info-gender">
-                                <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-name">Otti</div>
-                                <div class="info-feature">
-                                    <p>Medium</p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="#">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption7.png" alt="dogforadoption1">
-                                </div>
-                            </a>
-                            <div class="info-gender">
-                                <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                            </div>
-                            <div class="section-info">
-                                <div class="info-name">Nora</div>
-                                <div class="info-feature">
-                                    <p>Big </p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="#">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption6.jpg" alt="dogforadoption1">
-                                </div>
-                            </a>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Tommy</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Kitten</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
+                    <?php
+                    include_once '../models/cat.php';
+                    include_once '../repository/CatRepository.php';
+                    
+                    $catRepository = new CatRepository();
+                    $cats = $dogRepository->getAllCats();
+                    $catCounter = 0;
+                    ?>
+                    <?php
+                    foreach ($cats as $cat) {
+                            ?>
+                            <div class="section-con">
+                                <div class="section-item">
+                                    <a href=""></a>
+                                    <a href="./BrianDetails.php?id=<?=$dog['id']?>">
+                                    <div class="img-pet">
+                                        <img class="section-img" src=<?= '../Photos/' . $dog['image'] ?> alt="dogforadoption1"
+                                            >
+                                    </div>
+                                    </a>
+                                    <div class="info-gender">
+                                        <?php
+                                        if (strtolower($dog['gender']) == 'male') {
+                                            echo '<img src="../Photos/male.png" alt="" width="20px" height="20px">';
+                                        } else {
+                                            echo '<img src="../Photos/female.png" alt="" width="20px" height="20px">';
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="section-info">
+                                        <div class="info-name">
+                                            <?= $dog['name'] ?>
+                                        </div>
+                                        <div class="info-feature">
+                                            <p>
+                                                <?= $dog['breed'] ?>
+                                            </p>
+                                            <p>
+                                                <?= $dog['size'] ?>
+                                            </p>
+                                        </div>
+                                        <div class="seciton-button">
+                                            <button>
+                                                <a href="./BrianDetails.php?id=<?=$dog['id']?>">
+                                                    Adopt Me
+                                                </a>
+                                                <!-- Adopt Me -->
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="#">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption5.png" alt="dogforadoption1">
-                                </div>
-                            </a>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Lora</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Kitten</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="home">
-            <div class="section">
-                <!-- <h2 class="title">Adoptable Cats</h2> -->
-                <div class="section-list">
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="#">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption4.png" alt="dogforadoption1">
-                                </div>
-                            </a>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Alby</div>
-                                <div class="info-feature">
-                                    <p>Medium</p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="#">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption2.png" alt="dogforadoption1">
-                                </div>
-                            </a>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/female.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Sarah</div>
-                                <div class="info-feature">
-                                    <p>Medium</p>
-                                    <p>Baby</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="#">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption3.png" alt="dogforadoption1">
-                                </div>
-                            </a>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Zombie</div>
-                                <div class="info-feature">
-                                    <p>Small</p>
-                                    <p>Baby</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-con">
-                        <div class="section-item">
-                            <a href=""></a>
-                            <a href="#">
-                                <div class="img-pet">
-                                    <img class="section-img" src="../Photos/catforadoption1.png" alt="catforadoption">
-                                </div>
-                            </a>
-                            <div class="section-info">
-                                <div class="info-gender">
-                                    <img src="../Photos/male.png" alt="" width="20px" height="20px">
-                                </div>
-                                <div class="info-name">Ollie</div>
-                                <div class="info-feature">
-                                    <p>Medium</p>
-                                    <p>Adult</p>
-                                </div>
-                                <div class="seciton-button">
-                                    <button>
-                                        <!-- <a href=""> -->
-                                            Adopt Me
-                                        <!-- </a> -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
