@@ -309,3 +309,51 @@ body {
     height: 30px;
     width: 30px;
   }
+  @media (min-width: 481px ) and (max-width: 1024px){
+    body {
+      margin: 10px; 
+      flex-wrap: wrap; 
+    }
+    .home{
+      margin-top: 250px;
+    }
+    header {
+      width: 80%;
+      margin: auto;
+    }
+  
+    .header-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      margin-top: 10px;
+    }
+  
+    .logo img {
+      width: 80px;
+      height: 100px;
+    }
+  
+    .logo {
+      justify-content: center;
+      margin-left: 0;
+    }
+  
+    .logo a {
+      margin-top: 0;
+      margin-left: 10px;
+    }
+  
+    .left {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .left a {
+      margin-top: 0;
+      margin-right: 10px;
+    }
+  
+    
+  }

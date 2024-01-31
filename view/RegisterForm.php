@@ -149,8 +149,14 @@
             event.preventDefault();
             return;
         }
-        if (phonenumber < 9) {
+        if (phonenumber.length < 9) {
             phonenumberError.innerText = 'Please enter a valid phone number!';
+            event.preventDefault();
+            return;
+        }
+
+        if (date === "") {
+            dateError.innerText = 'Please enter your birth date!';
             event.preventDefault();
             return;
         }

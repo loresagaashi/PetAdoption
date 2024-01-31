@@ -115,6 +115,7 @@ include_once '../controllers/LogInController.php';
         let emailRegex = /^[^\@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             emailError.innerText = 'Please enter a valid email!';
+            event.preventDefault();
             return;
         }
         if(password === ""){
@@ -124,6 +125,7 @@ include_once '../controllers/LogInController.php';
             }
         if (password.length < 8) {
             passwordError.innerText = 'Please enter a valid password!';
+            event.preventDefault();
             return;
         }
     }

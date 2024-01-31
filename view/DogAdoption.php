@@ -40,6 +40,89 @@ if (isset($_SESSION['role'])) {
             height: 80%;
             object-fit: cover;
         }
+        @media (min-width: 320px) and (max-width: 620px) {
+
+.section-con {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.section-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#section-con-m {
+    width: 75%;
+    height: 250px;
+}
+}
+
+@media (min-width: 200px) and (max-width: 620px) {
+
+.section-con {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.section-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#section-con-m {
+    width: 75%;
+    height: 250px;
+}
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+.section-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section-con {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}
+
+#section-con-m {
+    width: 75%;
+    height: 250px;
+}
+}
+
+
+
+@media (min-width: 540px) and (max-width: 720px) {
+
+.section-con {
+    /* display: flex;
+    flex-direction: column; */
+    /* width: 50%;
+    margin-bottom: 20px;
+    height: auto; */
+}
+
+.section-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#section-con-m {
+    width: 75%;
+    height: 250px;
+}
+}
     </style>
 
 </head>
@@ -61,7 +144,7 @@ if (isset($_SESSION['role'])) {
                 if (isset($_SESSION['email'])) {
                     echo '<a href="./logout.php"><img src="../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
                 } else {
-                    echo '<a href="./LogInForm.php"><img src="../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
+                    echo '<a href="./LogInForm.php"><img src="../Photos/login.png" width="25px" height="25px" alt=""></a>';
                 }
                 ?>
             </div>

@@ -401,6 +401,7 @@ body {
     .form-box {
         width: 100%;
         display: flex;
+        margin-top: 0px;
     }
   
     .input-group {
@@ -420,10 +421,10 @@ body {
     .btn-group {
         text-align: center; 
     }
-  
     #submit {
         width: 100%; 
     }
+
   }
   @media (min-width: 768px ) and (max-width: 1024px){
     .container {
@@ -434,10 +435,6 @@ body {
     .form-box {
         width: 100%;
         display: flex;
-    }
-  
-    .input-group {
-        flex-direction: column; 
     }
   
     .input-group-left,

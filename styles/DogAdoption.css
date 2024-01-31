@@ -737,7 +737,8 @@ li {
   .banner-text h1 {
     font-size: 20px; 
     line-height: 1.2;
-    margin-top: 100px;
+    /* margin-top: 100px; */
+    margin-bottom: 150px;
   }
 
   #banner-text-span {

@@ -172,4 +172,78 @@ body {
       padding: 10px 10px;
     }
   }
+  @media only screen and (max-width: 500px) {
+    .table {
+      padding: 15px;
+      width: 50%;
+      /* margin-left: 25px; */
+      margin-left: 100px;
+    }
   
+    td, th {
+      padding: 5px;
+      font-size: 12px; /* Adjust the font size for better readability on smaller screens */
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      width: 100%;
+    }
+  
+    .header-nav {
+      flex-direction: column;
+      padding: 10px;
+      margin-top: 0;
+    }
+  
+    .logo img {
+      width: 60px;
+      height: 80px;
+    }
+  
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -50px;
+    }
+  
+    .logo a {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      color: black;
+      padding: 10px;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left a {
+      color: black;
+      padding: 10px;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-right: 0; 
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .table {
+      padding: 15px;
+      width: 50%;
+      /* margin-left: 25px; */
+      margin-left: 100px;
+    }
+  
+    td, th {
+      padding: 5px;
+      font-size: 12px; /* Adjust the font size for better readability on smaller screens */
+      display: flex;
+      flex-direction: column;
+    }
+  }
