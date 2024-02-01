@@ -164,7 +164,9 @@ body {
       display: flex;
       flex-direction: column;
     }
-    
+    #firstNameError{
+      margin-top: 7px;
+    }
     .input-group {
       display: flex;
       flex-wrap: wrap;

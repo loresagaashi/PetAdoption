@@ -147,73 +147,38 @@ if (isset($_POST['submitBtn'])) {
     </div>
 </body>
 <script>
-    let signupBtn = document.getElementById("signupBtn");
-    let signinBtn = document.getElementById("signinBtn");
-    let signInButton = document.getElementById('signIn');
-    let signUpButton = document.getElementById('signUp');
-    let submit = document.getElementById("submit");
-
     function submitForm(event) {
-        let firstName = document.getElementById("firstName").value.trim();
-        let firstNameError = document.getElementById('firstNameError');
-        let lastName = document.getElementById("lastName").value.trim();
-        let lastNameError = document.getElementById('lastNameError');
-        let email = document.getElementById("email").value.trim();
-        let emailError = document.getElementById('emailError');
-        let password = document.getElementById("password").value.trim();
-        let passwordError = document.getElementById('passwordError');
-        let date = document.getElementById("date").value.trim();
-        let dateError = document.getElementById('dateError');
-        let phonenumber = document.getElementById('phonenumber');
-        let phonenumberError = document.getElementById('phonenumberError');
+        let name = document.getElementById("Name").value.trim();
+        let name = document.getElementById('nameError');
+        let age = document.getElementById("Age").value.trim();
+        let breed = document.getElementById("Breed").value.trim();
+        let gender = document.getElementById("Gender").value.trim();
+        let color = document.getElementById("Color").value.trim();
+        let size = document.getElementById('Size').value.trim();    
+        let coatLength = document.getElementById('CoatLength').value.trim();
+        
+        nameError.innerText = '';
+        submitError.innerText='';
+        
 
-        firstNameError.innerText = '';
-        lastNameError.innerText = '';
-        emailError.innerText = '';
-        passwordError.innerText = '';
 
-        let firstNameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
-        if (!firstNameRegex.test(firstName)) {
-            firstNameError.innerText = 'Please enter a valid first name!';
+        if (name === '' || age === '' || breed === '' || gender === '' || color === '' || size === '' || coatLength === '' ) {
+            submitError.innerText = 'Fill all the fields!';
             event.preventDefault();
             return;
         }
 
-        let lastNameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
-        if (!lastNameRegex.test(lastName)) {
-            lastNameError.innerText = 'Please enter a valid last name!';
+        let nameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
+        if (!nameRegex.test(Name)) {
+            nameError.innerText = 'Please enter a valid name!';
             event.preventDefault();
             return;
         }
 
-        let emailRegex = /^[^\@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            emailError.innerText = 'Please enter a valid email!';
-            event.preventDefault();
-            return;
-        }
-
-        if (password.length < 8) {
-            passwordError.innerText = 'Please enter a valid password!';
-            event.preventDefault();
-            return;
-        }
-        if (phonenumber < 9) {
-            phonenumberError.innerText = 'Please enter a valid phone number!';
-            event.preventDefault();
-            return;
-        }
         function clearErrorMessages() {
-            firstNameError.innerText = "";
-            lastNameError.innerText = "";
-            emailError.innerText = "";
-            passwordError.innerText = "";
+            nameError.innerText = "";
+            submitError.innerText='';
         }
-    }
-    function displayFileName() {
-        var input = document.getElementById('image');
-        var fileName = input.files[0].name;
-        document.getElementById('selectedFileName').innerText = fileName;
     }
 </script>
 
