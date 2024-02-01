@@ -17,9 +17,9 @@ if (isset($_POST['submitbtn'])) {
             $emailError = "Email not found!";
         } else {
             $users = $userRepository->getAllUsers();
-
+            $passwordMatched = false;
             foreach ($users as $user) {
-                if ($email == $user['email'] && $password == $user['password']) {
+                if ($email == $user['email'] && $password== $user['password']) {
                     session_start();
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['email'] = $email;
@@ -28,8 +28,11 @@ if (isset($_POST['submitbtn'])) {
 
                     header("location:../view/PetAdoption.php");
                     exit();
+                } 
                 }
-            }
+                if (!$passwordMatched) {
+                    $passwordError = "Incorrect password!";
+                }  
         }
     }
 }

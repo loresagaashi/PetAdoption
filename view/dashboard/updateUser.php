@@ -28,8 +28,14 @@ $hide = "";
         $birthDate = $_POST["birthDate"];  
         $role = $_POST["role"];  
     
-            $userRepository->updateUser($id, $firstName, $lastName, $email, $password, $phoneNumber, $birthDate, $role);
+        $existingUser = $userRepository->getUserByEmail($newEmail);
+
+        if ($existingUser && $existingUser['id'] != $id) {
+            $emailError = "This email is already in use. Please try another one.";
+        } else {
+            $userRepository->updateUser($id, $firstName, $lastName, $newEmail, $password, $phoneNumber, $birthDate, $role);
             header("location:./userTable.php");
+        }
     }
 
 ?>
@@ -65,7 +71,7 @@ $hide = "";
                         echo '<a href="./logout.php"><img src="../../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
                     }
                     else {
-                        echo '<a href="./LogInForm.php"><img src="../../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
+                        echo '<a href="./LogInForm.php"><img src="../../Photos/login.png" width="25px" height="25px" alt=""></a>';
                     }
                 ?>
             </div>
@@ -95,6 +101,11 @@ $hide = "";
                         <div class="error-message" id="emailError"></div>
                         <p id="errorEmail" style="color: red;"></p>
                     </div>
+                    <?php
+                                if (!empty($emailError)) {
+                                    echo "<p style='color: red; font-size:16px;'>$emailError</p>";
+                                }
+                                ?>
                     <div class="input-field left">
                     <input type="password" name="password"  value="<?=$user['password']?>" placeholder="Password" id="password">
                         <div class="error-message" id="passwordError"></div>
@@ -119,12 +130,6 @@ $hide = "";
                         <div class="error-message" id="roleError"></div>
                         <p id="errorRole" style="color: red;"></p>
                     </div>
-                    <!-- <div>
-                    <input type="file" name="image" id="image" onchange="displayFileName()">
-                        <div class="error-message" id="imageError"></div>
-                        <p id="errorImage" style="color: red;"></p>
-                        <span id="selectedFileName" class="image"><?=$dog['image']?></span>
-                    </div> -->
                 </div>
                 </div>
                 <div class="btn-group">

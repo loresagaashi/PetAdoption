@@ -65,7 +65,7 @@ function submitForm() {}
         return false;
     }
     return true; 
-}
+// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     submitForm();
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (isset($_SESSION['email'])) {
                     echo '<a href="./logout.php"><img src="../../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
                 } else {
-                    echo '<a href="./LogInForm.php"><img src="../../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
+                    echo '<a href="./LogInForm.php"><img src="../../Photos/login.png" width="25px" height="25px" alt=""></a>';
                 }
                 ?>
             </div>

@@ -1,15 +1,18 @@
-<?php 
+<?php
 include_once __DIR__ . '/../database/database.php';
 
-class UserRepository{
+class UserRepository
+{
     private $connection;
 
-    function __construct(){
+    function __construct()
+    {
         $conn = new DatabaseConnection;
         $this->connection = $conn->startConnection();
     }
 
-    function insertUser($user){
+    function insertUser($user)
+    {
         $conn = $this->connection;
 
         $id = $user->getId();
@@ -22,13 +25,14 @@ class UserRepository{
         $role = $user->getRole();
 
         $sql = "INSERT INTO users (id, firstName, lastName, email, password, phoneNumber, birthDate, role) VALUES (?,?,?,?,?,?,?,?)";
-        
+
         $statement = $conn->prepare($sql);
-        $statement->execute([$id,$firstName,$lastName,$email, $password, $phoneNumber, $birthDate, $role]);
+        $statement->execute([$id, $firstName, $lastName, $email, $password, $phoneNumber, $birthDate, $role]);
         echo "<script> alert('User has been inserted successfuly!') </script>";
     }
 
-    function getAllUsers(){
+    function getAllUsers()
+    {
         $conn = $this->connection;
 
         $sql = "SELECT * FROM users";
@@ -38,35 +42,39 @@ class UserRepository{
         return $users;
     }
 
-    function getUserByUsernameAndPassword($username,$password){
-      
+    function getUserByUsernameAndPassword($username, $password)
+    {
+
     }
 
-    function getUserById($id){
-      $conn = $this->connection;
+    function getUserById($id)
+    {
+        $conn = $this->connection;
 
-      $sql = "SELECT * FROM users WHERE id='$id'";
-      $statement=$conn->query($sql);
-      $users = $statement->fetch();
+        $sql = "SELECT * FROM users WHERE id='$id'";
+        $statement = $conn->query($sql);
+        $users = $statement->fetch();
 
-      return $users;
+        return $users;
     }
 
 
-    function updateUser($id,$firstName,$lastName,$email,$password,$phoneNumber, $birthDate,$role){
+    function updateUser($id, $firstName, $lastName, $email, $password, $phoneNumber, $birthDate, $role)
+    {
         $conn = $this->connection;
 
         $sql = "UPDATE users SET firstName=?,lastName=?,email=?,password=?, phoneNumber=?, birthDate=?, role=? where id=?";
 
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$firstName,$lastName,$email,$password,$phoneNumber,$birthDate,$role, $id]);
+        $statement->execute([$firstName, $lastName, $email, $password, $phoneNumber, $birthDate, $role, $id]);
         echo "<script> alert('User has been updated successfuly!') </script>";
     }
 
-    function deleteUserById($id){
+    function deleteUserById($id)
+    {
         $conn = $this->connection;
-    
+
         try {
             $sql = "DELETE FROM users WHERE id=?";
             $statement = $conn->prepare($sql);
@@ -77,16 +85,17 @@ class UserRepository{
             echo "Error deleting user: " . $e->getMessage();
         }
     }
-    
 
-    function getuserbyemail($email){
+
+    function getUserByEmail($email)
+    {
         $conn = $this->connection;
 
-      $sql = "SELECT * FROM users WHERE email='$email'";
-      $statement=$conn->query($sql);
-      $users = $statement->fetch();
+        $sql = "SELECT * FROM users WHERE email='$email'";
+        $statement = $conn->query($sql);
+        $users = $statement->fetch();
 
-      return $users;
+        return $users;
     }
 }
 ?>

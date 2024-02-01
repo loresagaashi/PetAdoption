@@ -49,7 +49,7 @@ if (isset($_SESSION['role'])) {
                 if (isset($_SESSION['email'])) {
                     echo '<a href="../logout.php"><img src="../../Photos/logout2.png" width="25px" height="25px" alt=""></a>';
                 } else {
-                    echo '<a href="./LogInForm.php"><img src="../../Photos/login.jpg" width="25px" height="25px" alt=""></a>';
+                    echo '<a href="./LogInForm.php"><img src="../../Photos/login.png" width="25px" height="25px" alt=""></a>';
                 }
                 ?>
             </div>
@@ -179,7 +179,7 @@ if (isset($_SESSION['role'])) {
         }
     }
     function confirmDelete(userId) {
-        if (confirm("Are you sure you want to delete this user?")) {
+        if (confirm("Are you sure you want to delete this cat?")) {
             window.location.href = 'deleteUser.php?id=' + userId;
         } else {
             event.preventDefault();

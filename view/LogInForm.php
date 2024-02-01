@@ -28,12 +28,12 @@ include_once '../controllers/LogInController.php';
 
     </header>
     <div class="container">
- 
+
         <div class="form-box">
             <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" onsubmit="return submitForm(event)">
-            <h1>Log In</h1>
+                <h1>Log In</h1>
                 <div class="input-group">
-        
+
 
                     <div class="input-field" id="emailField">
                         <input type="text" name="email" placeholder="Email" id="email">
@@ -41,53 +41,54 @@ include_once '../controllers/LogInController.php';
                     <div class="error-message" id="emailError"></div>
                     <p id="errorEmail" style="color: red;"></p>
                     <?php
-                if (!empty($emailError)) {
-                    echo "<p style='color: red;'>$emailError</p>";
-                }
-               
-                ?>
+                    if (!empty($emailError)) {
+$emailError="";
+                        echo "<p style='color: red; font-size:16px;'>$emailError</p>";
+                    }
+
+                    ?>
                     <div class="input-field" id="passwordField">
                         <input type="password" name="password" placeholder="Password" id="password">
                     </div>
                     <div class="error-message" id="passwordError"></div>
                     <p id="errorPassword" style="color: red;"></p>
                     <?php
-                if (!empty($passwordError)) {
-                    echo "<p style='color: red;'>$passwordError</p>";
-                }
-                ?>
-               
+                    if (!empty($passwordError)) {
+                        echo "<p style='color: red;'>$passwordError</p>";
+                    }
+                    ?>
+
                     <div class="remember-forgot">
-                
-                <div class="forgot">
-                <a href="#">Forgot password?</a>
-                </div>
+
+                        <div class="forgot">
+                            <a href="#">Forgot password?</a>
+                        </div>
                     </div>
                     <br>
-                 
+
                 </div>
                 <div class="btn-group">
                     <button type="submit" name="submitbtn" id="submit">Login</button>
                 </div>
-               
-            <div class="register">
-                <p>Don't have an account? <a href="RegisterForm.php">SIGN UP</a></p>
-            </div> 
-            <div class="register-social">
-                <p>OR SIGN UP USING</p>
-                <ul class="hArray">
-                    <li>
-                        <a href="#" class="li-facebook"><img src="../Photos/fb-logo.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#" class="li-instagram"><img src="../Photos/instagram.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#" class="li-x"><img src="../Photos/xlogo2.png" alt=""></a>
-                    </li>
-                </ul>
 
-            </div>
+                <div class="register">
+                    <p>Don't have an account? <a href="RegisterForm.php">SIGN UP</a></p>
+                </div>
+                <div class="register-social">
+                    <p>OR SIGN UP USING</p>
+                    <ul class="hArray">
+                        <li>
+                            <a href="#" class="li-facebook"><img src="../Photos/fb-logo.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#" class="li-instagram"><img src="../Photos/instagram.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#" class="li-x"><img src="../Photos/xlogo2.png" alt=""></a>
+                        </li>
+                    </ul>
+
+                </div>
             </form>
         </div>
     </div>
@@ -103,11 +104,11 @@ include_once '../controllers/LogInController.php';
         let emailError = document.getElementById('emailError');
         let password = document.getElementById("password").value.trim();
         let passwordError = document.getElementById('passwordError');
-   
+
         emailError.innerText = '';
         passwordError.innerText = '';
-        
-        if(email==="") {
+
+        if (email === "") {
             emailError.innerText = 'Please enter an email!';
             event.preventDefault();
             return;
@@ -118,11 +119,11 @@ include_once '../controllers/LogInController.php';
             event.preventDefault();
             return;
         }
-        if(password === ""){
-                passwordError.innerText = 'Please enter a password!';
-                event.preventDefault();
-                return;
-            }
+        if (password === "") {
+            passwordError.innerText = 'Please enter a password!';
+            event.preventDefault();
+            return;
+        }
         if (password.length < 8) {
             passwordError.innerText = 'Please enter a valid password!';
             event.preventDefault();
