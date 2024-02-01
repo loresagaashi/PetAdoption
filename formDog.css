@@ -15,7 +15,9 @@ body {
   header {
     flex-wrap: wrap;
     width: 100%;
-    background-color: transparent;
+    font-weight: 500;
+    background: transparent;
+    backdrop-filter: blur(20px);
   }
   .header-nav {
     margin-bottom: 60px;
@@ -23,7 +25,6 @@ body {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
-    background-color: transparent;
     /* background-color: #f5f1ea; */
     /* margin-top: -10px; */
   }

@@ -163,6 +163,7 @@ if (isset($_SESSION['role'])) {
         function clearErrorMessages() {
             nameError.innerText = "";
             submitError.innerText = '';
+            genderError.innerText = '';
         }
         clearErrorMessages();
     }

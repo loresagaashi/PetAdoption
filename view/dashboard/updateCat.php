@@ -80,7 +80,7 @@ if (isset($_POST['submitBtn'])) {
     </header>
     <div class="container">
         <div class="form-box">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data" onsubmit="return submitForm(event)">
                 <h1>Update</h1>
                 <div class="input-group">
                     <!-- Left column -->
@@ -88,9 +88,10 @@ if (isset($_POST['submitBtn'])) {
                         <div class="input-field left">
                             <input type="text" name="id" value="<?= $cat['id'] ?>" readonly hidden>
                             <input type="text" name="name" value="<?= $cat['name'] ?>" placeholder="Name" id="name">
-                            <div class="error-message" id="nameError"></div>
-                            <p id="errorName" style="color: red;"></p>
+                          
                         </div>
+                        <div class="error-message" id="nameError"></div>
+                            <p id="errorName" style="color: red;"></p>
                         <div class="input-field left">
                             <input type="text" name="breed" value="<?= $cat['breed'] ?>" placeholder="Breed" id="breed">
                             <div class="error-message" id="breedError"></div>
@@ -138,6 +139,8 @@ if (isset($_POST['submitBtn'])) {
                     </div>
                 </div>
                 <div class="btn-group">
+                <div class="error-message" id="submitError"></div>
+                <p id="errorSubmit" style="color: red;"></p>
                     <button type="submit" name="submitBtn" id="submitBtn">Update</button>
                     <button type="button" onclick="window.location.href='./catTable.php'" name="cancelBtn"
                         id="cancel">Cancel</button>
@@ -148,17 +151,15 @@ if (isset($_POST['submitBtn'])) {
 </body>
 <script>
     function submitForm(event) {
-        let name = document.getElementById("Name").value.trim();
-        let name = document.getElementById('nameError');
-        let age = document.getElementById("Age").value.trim();
-        let breed = document.getElementById("Breed").value.trim();
-        let gender = document.getElementById("Gender").value.trim();
-        let color = document.getElementById("Color").value.trim();
-        let size = document.getElementById('Size').value.trim();    
-        let coatLength = document.getElementById('CoatLength').value.trim();
-        
+        let name = document.getElementById("name").value.trim();
+        let gender = document.getElementById("gender").value.trim();
+       
+        let nameError = document.getElementById('nameError');
+        let genderError = document.getElementById('genderError');
+        let submitError = document.getElementById('submitError');
         nameError.innerText = '';
         submitError.innerText='';
+        genderError.innerText = '';
         
 
 
@@ -169,16 +170,23 @@ if (isset($_POST['submitBtn'])) {
         }
 
         let nameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/;
-        if (!nameRegex.test(Name)) {
+        if (!nameRegex.test(name)) {
             nameError.innerText = 'Please enter a valid name!';
             event.preventDefault();
             return;
         }
-
+        let allowedGenders = ["Female", "Male"];
+        if (!allowedGenders.includes(gender)) {
+            genderError.innerText = 'Gender does not exist';
+            event.preventDefault();
+            return;
+        }
         function clearErrorMessages() {
             nameError.innerText = "";
             submitError.innerText='';
+            genderError.innerText = '';
         }
+        clearErrorMessages();
     }
 </script>
 
