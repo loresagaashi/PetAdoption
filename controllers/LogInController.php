@@ -3,6 +3,7 @@ include_once '../models/user.php';
 include_once '../repository/UserRepository.php';
 
 $emailError="";
+$passwordError="";
 if (isset($_POST['submitbtn'])) {
     $email = $_POST["email"];
     $password = $_POST["password"];

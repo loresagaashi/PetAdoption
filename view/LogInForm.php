@@ -41,12 +41,10 @@ include_once '../controllers/LogInController.php';
                     <div class="error-message" id="emailError"></div>
                     <p id="errorEmail" style="color: red;"></p>
                     <?php
-                    if (!empty($emailError)) {
-$emailError="";
-                        echo "<p style='color: red; font-size:16px;'>$emailError</p>";
-                    }
-
-                    ?>
+        if (!empty($emailError)) {
+            echo "<p style='color: red; font-size:16px;'>$emailError</p>";
+        }
+        ?>
                     <div class="input-field" id="passwordField">
                         <input type="password" name="password" placeholder="Password" id="password">
                     </div>
