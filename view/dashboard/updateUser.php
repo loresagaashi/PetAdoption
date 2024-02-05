@@ -28,12 +28,12 @@ $hide = "";
         $birthDate = $_POST["birthDate"];  
         $role = $_POST["role"];  
     
-        $existingUser = $userRepository->getUserByEmail($newEmail);
+        $existingUser = $userRepository->getUserByEmail($email);
 
         if ($existingUser && $existingUser['id'] != $id) {
             $emailError = "This email is already in use. Please try another one.";
         } else {
-            $userRepository->updateUser($id, $firstName, $lastName, $newEmail, $password, $phoneNumber, $birthDate, $role);
+            $userRepository->updateUser($id, $firstName, $lastName, $email, $password, $phoneNumber, $birthDate, $role);
             header("location:./userTable.php");
         }
     }
