@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $user = new User(null, $firstName, $lastName, $email, $password, $phoneNumber, $birthDate, $role);
             $userRepository = new UserRepository();
             $userRepository->insertUser($user);
-            header("location: ../view/userTable.php");
+            header("location: ../dashboard/dashboard.php");
         }
     }
 }

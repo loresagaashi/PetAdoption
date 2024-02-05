@@ -8,6 +8,8 @@ if (isset($_SESSION['role'])) {
         $hide = "hide";
 } else {
     $hide = "hide";
+     header("Location: ../LoginPage.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>

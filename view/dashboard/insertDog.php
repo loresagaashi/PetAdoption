@@ -101,17 +101,18 @@ if (isset($_SESSION['role'])) {
                             <input type="text" name="gender" placeholder="Gender" id="gender">
 
                         </div>
+                        <?php
+                        if (!empty($genderError)) {
+                            echo "<p style='color: red; font-size: 16px;'>$genderError</p>";
+                        }
+                        ?>
                         <div class="error-message" id="genderError"></div>
                         <p id="errorGender" style="color: red;"></p>
                         <div class="input-field right">
                             <input type="text" name="size" placeholder="Size" id="size">
 
                         </div>
-                        <?php
-                        if (!empty($genderError)) {
-                            echo "<p style='color: red; font-size: 16px;'>$genderError</p>";
-                        }
-                        ?>
+                      
                         <div class="error-message" id="genderError"></div>
                         <p id="errorGender" style="color: red;"></p>
                         <div class="input-field right">
